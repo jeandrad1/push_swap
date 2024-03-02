@@ -4,11 +4,16 @@ NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 #Archivos
-
 SRC =	create_input.c
 
 # Carpeta libft
-LIBFT_DIR = libft
+LIBFT_DIR = libft/libft.a
+
+# Carpeta gnl
+GNL_DIR = gnl
+
+#Carperta printf
+PRINTF_DIR = libftprintf
 
 # Reglas
 all: $(NAME)
@@ -24,10 +29,16 @@ $(NAME): $(OBJ)
 clean:
 	rm -f $(OBJ) $(BONUS_OBJS)
 	make -C $(LIBFT_DIR) clean
+	make -C $(GNL_DIR) clean
+	make -C $(PRINTF_DIR) clean
+
 
 fclean: clean
 	rm -f $(NAME)
 	make -C $(LIBFT_DIR) fclean
+	make -C $(GNL_DIR) fclean
+	make -C $(PRINTF_DIR) fclean
+
 
 #Reconstruye
 re: fclean $(NAME)
