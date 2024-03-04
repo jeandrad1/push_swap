@@ -1,8 +1,6 @@
 NAME		=	push_swap
 
-SRC			=	push_swap.c utils.c operations_one.c operations_two.c\
-				operations_three.c order.c order_two.c order_three.c\
-				lis.c sort.c\
+SRC			=	push_swap.c
 
 LIBFT		=	libft/libft.a
 
