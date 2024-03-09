@@ -15,6 +15,7 @@
 
 # include "./libft/libft.h"
 
+void	ft_write_lst(t_list **stack_a, int argc, char **argv, int i);
 void	ft_check_argv(int argc, char **argv, t_list **stack_a);
 
 #endif

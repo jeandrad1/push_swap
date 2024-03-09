@@ -10,6 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+void	ft_write_lst(t_list **stack_a, int argc, char **argv, int i)
+{
+	t_list	*tmp;
+
+	tmp = NULL;
+	while (i < argc)
+	{
+		tmp = ft_lstnew(ft_atoi(argv[i]));
+		ft_lstadd_back(stack_a, tmp);
+		ft_lstcheck(*stack_a, tmp->content);
+		i++;
+	}
+	ft_lst_order(stack_a);
+	ft_lst_inverted(stack_a);
+	tmp = NULL;
+}
+
 void	ft_check_argv(int argc, char **argv, t_list **stack_a)
 {
 	int		size;
@@ -44,5 +63,5 @@ int	main(int argc, char **argv)
 		return (0);
 	else
 		ft_check_argv(argc, argv, &stack_a);
-    return(1);
+	return (1);
 }
