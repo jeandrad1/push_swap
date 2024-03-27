@@ -10,8 +10,6 @@ OBJ			=	$(SRC:.c=.o)
 
 CC			=	gcc
 
-RM			=	rm -f
-
 CFLAGS		=	-Wall -Wextra -Werror
 
 $(NAME):	$(OBJ)
@@ -22,11 +20,11 @@ all:		$(NAME)
 
 clean:
 			make clean -C ./libft
-			${RM} $(OBJ) $(OBJ_BONUS)
+			rm -f $(OBJ) 
 
 fclean: 	clean
 			make fclean -C ./libft
-			${RM} $(NAME) $(NAME_BONUS) ${OBJ} $(OBJ_BONUS)
+			rm -f $(NAME) ${OBJ}
 
 re:			fclean
 

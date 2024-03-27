@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:56:12 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/03/27 10:27:18 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/03/27 11:47:22 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	if (!lst)
-		return (NULL);
+		return ;
 	if (!*lst)
 	{
 		*lst = new;
-		return (NULL);
+		return ;
 	}
 	else
 		ft_lstlast(*lst)->next = new;

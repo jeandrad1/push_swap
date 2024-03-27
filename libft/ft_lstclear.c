@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 09:17:21 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/03/27 10:26:12 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/03/27 11:47:48 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	t_list	*temp;
 
 	if (!lst || !del || !(*lst))
-		return (NULL);
+		return ;
 	while (lst && *lst)
 	{
 		temp = (*lst)->next;
