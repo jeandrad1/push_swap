@@ -1,4 +1,15 @@
-#include "./libft/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   order_three.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/27 10:25:00 by jeandrad          #+#    #+#             */
+/*   Updated: 2024/03/27 10:25:07 by jeandrad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	return_max_or_min(int cont, int *max_n_min, int size)
