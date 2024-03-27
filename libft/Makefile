@@ -22,7 +22,7 @@ BONUS_OBJS = $(BONUS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(AR) rcs $@ $^
+		ar rc ${NAME} ${OBJS}
 
 #Salida .o
 %.o: %.c
