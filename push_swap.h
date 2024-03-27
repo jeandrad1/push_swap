@@ -62,5 +62,6 @@ int		*ft_define_lis(int *dst, int size, int *max);
 int		*ft_long_lis(int *dst, int *arr, int size, int *ret);
 int		*ft_lis_util(int *dst, int *arr, int max, int size);
 int		*ft_lis_util_helper(int max);
+void	ft_display_exit(void);
 
 #endif

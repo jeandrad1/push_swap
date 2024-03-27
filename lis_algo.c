@@ -6,17 +6,11 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 10:23:23 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/03/27 11:40:59 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/03/27 12:02:42 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_display_exit(void)
-{
-	ft_putstr_fd("Error\n", 2);
-	exit(0);
-}
 
 int	*ft_lis_util_helper(int max)
 {
