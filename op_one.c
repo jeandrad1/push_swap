@@ -6,11 +6,11 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 10:23:57 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/03/27 10:24:07 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/03/27 11:41:16 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
+#include "push_swap.h"
 
 void	ft_sa(t_list **stack_a)
 {
