@@ -130,3 +130,4 @@ int	ft_best_nbr_b(t_list **stack_b, int size_b, t_list **stack_a, int size_a)
 	free(arr_b);
 	return (i);
 }
+

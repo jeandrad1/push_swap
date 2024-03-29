@@ -31,7 +31,7 @@ void	ft_lstcheck(t_list *stack_a, int check)
 {
 	while (stack_a->next != NULL)
 	{
-		if (*(int *) stack_a -> content == check)
+		if (stack_a->content == check)
 			ft_display_exit();
 		stack_a = stack_a->next;
 	}
@@ -76,20 +76,13 @@ void	ft_lst_inverted(t_list **stack_a)
 void	ft_write_lst(t_list **stack_a, int argc, char **argv, int i)
 {
 	t_list	*tmp;
-	int		*num;
 
 	tmp = NULL;
-	num = malloc(sizeof(int));
-	if (num == NULL)
-	{
-		return ;
-	}
 	while (i < argc)
 	{
-		*num = ft_atoi(argv[i]);
-		tmp = ft_lstnew(num);
+		tmp = ft_lstnew(ft_atoi(argv[i]));
 		ft_lstadd_back(stack_a, tmp);
-		ft_lstcheck(*stack_a, *(int *) tmp->content);
+		ft_lstcheck(*stack_a, tmp->content);
 		i++;
 	}
 	ft_lst_order(stack_a);

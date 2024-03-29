@@ -21,6 +21,7 @@ void	ft_lstcheck(t_list *stack_a, int check);
 void	ft_lst_order(t_list **stack_a);
 void	ft_lst_inverted(t_list **stack_a);
 void	ft_lst_delete(t_list **stack);
+void	ft_display_exit(void);
 
 void	ft_sa(t_list **stack_a);
 void	ft_sb(t_list **stack_b);
@@ -62,6 +63,23 @@ int		*ft_define_lis(int *dst, int size, int *max);
 int		*ft_long_lis(int *dst, int *arr, int size, int *ret);
 int		*ft_lis_util(int *dst, int *arr, int max, int size);
 int		*ft_lis_util_helper(int max);
-void	ft_display_exit(void);
+
+void	ft_exec_sort(t_list **stack_a, t_list **stack_b, char *str);
+void	ft_rrr_or_death(t_list **stack_a, t_list **stack_b, char *str);
+void	ft_check_write_lst(t_list **stack_a, int argc, char **argv, int i);
+void	ft_check_lst_inverted(t_list **stack_a);
+void	ft_check_sort(t_list *stack_a);
+void	ft_check_argv_c(int argc, char **argv, t_list **stack_a);
+void	ft_sa_check(t_list **stack_a);
+void	ft_sb_check(t_list **stack_b);
+void	ft_ss_check(t_list **stack_a, t_list **stack_b);
+void	ft_pa_check(t_list **stack_b, t_list **stack_a);
+void	ft_pb_check(t_list **stack_a, t_list **stack_b);
+void	ft_ra_check(t_list **stack_a);
+void	ft_rb_check(t_list **stack_b);
+void	ft_rr_check(t_list **stack_a, t_list **stack_b);
+void	ft_rra_check(t_list **stack_a);
+void	ft_rrb_check(t_list **stack_b);
+void	ft_rrr_check(t_list **stack_a, t_list **stack_b);
 
 #endif
