@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 10:23:23 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/03/27 12:02:42 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/03/30 10:41:05 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	*ft_lis_util_helper(int max)
 
 	val = (int *) malloc (sizeof(int) * (max + 1));
 	if (!val)
-		ft_display_exit();
+		ft_display_error();
 	val[max - 1] = 2147483647;
 	return (val);
 }
@@ -62,7 +62,7 @@ int	*ft_define_lis(int *dst, int size, int *max)
 	j = -1;
 	arr = (int *) malloc (sizeof(int) * size);
 	if (!arr)
-		ft_display_exit();
+		ft_display_error();
 	while (i < size)
 		arr[i++] = 1;
 	while (++j < size)

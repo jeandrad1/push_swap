@@ -21,7 +21,7 @@ void	ft_lstcheck(t_list *stack_a, int check);
 void	ft_lst_order(t_list **stack_a);
 void	ft_lst_inverted(t_list **stack_a);
 void	ft_lst_delete(t_list **stack);
-void	ft_display_exit(void);
+void	ft_display_error(void);
 
 void	ft_sa(t_list **stack_a);
 void	ft_sb(t_list **stack_b);
@@ -58,6 +58,11 @@ int		ft_max_nbr(int a, int b);
 int		ft_min_nbr(int a, int b);
 int		ft_max_or_min(t_list *stack_a, int cont, int size);
 int		return_max_or_min(int cont, int *max_n_min, int size);
+
+t_list	*ft_lstnew(int content);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
 
 int		*ft_define_lis(int *dst, int size, int *max);
 int		*ft_long_lis(int *dst, int *arr, int size, int *ret);

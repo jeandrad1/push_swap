@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 10:24:49 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/03/27 10:24:53 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/03/30 10:40:11 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	ft_best_comb(int *arr_a, int *arr_b, int size)
 	i = -1;
 	tmp = (int *) malloc (sizeof(int) * size);
 	if (!tmp || !arr_a || !arr_b)
-		ft_display_exit();
+		ft_display_error();
 	while (++i < size)
 	{
 		if ((arr_a[i] > 0 && arr_b[i] > 0)
@@ -114,7 +114,7 @@ int	ft_best_nbr_b(t_list **stack_b, int size_b, t_list **stack_a, int size_a)
 	arr_a = (int *) malloc (sizeof(int) * size_b);
 	arr_b = (int *) malloc (sizeof(int) * size_b);
 	if (!arr_b || !arr_a)
-		ft_display_exit();
+		ft_display_error();
 	while (++i < size_b)
 		arr_b[i] = ft_the_needed_b(i, size_b);
 	i = -1;

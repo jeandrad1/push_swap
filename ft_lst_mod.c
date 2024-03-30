@@ -1,16 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lst_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/19 10:00:02 by jeandrad          #+#    #+#             */
-/*   Updated: 2023/12/19 11:27:16 by jeandrad         ###   ########.fr       */
+/*   Created: 2024/03/30 10:23:32 by jeandrad          #+#    #+#             */
+/*   Updated: 2024/03/30 10:30:06 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
+
+t_list	*ft_lstnew(int content)
+{
+	t_list	*new_node;
+
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
+}
+
+int	ft_lstsize(t_list *lst)
+{
+	int	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
+}
 
 t_list	*ft_lstlast(t_list *lst)
 {
@@ -21,21 +46,15 @@ t_list	*ft_lstlast(t_list *lst)
 	return (lst);
 }
 
-/*
-#include <stdio.h>
-int main(){
-    t_list *list;
-    t_list *new1;
-    t_list *new2;
-    char str []= "Test1";
-    char str2 []= "Test2";
-    char str3 []= "Test3";
-    list = ft_lstnew(str);
-    new1 = ft_lstnew(str2);
-    new2 = ft_lstnew(str3);
-    ft_lstadd_front(&list, new1);
-    ft_lstadd_front(&list, new2);
-    printf("%s\n", ft_lstlast(list)->content);
-    return (0);
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	if (!lst)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	else
+		ft_lstlast(*lst)->next = new;
 }
-*/

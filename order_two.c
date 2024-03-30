@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 10:25:21 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/03/27 10:26:41 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/03/30 10:40:44 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	*ft_copy_cont(t_list *stack_a, int size)
 	i = 0;
 	arr = (int *) malloc (sizeof(int) * size + 1);
 	if (!arr)
-		ft_display_exit();
+		ft_display_error();
 	while (stack_a != NULL)
 	{
 		arr[i++] = (stack_a)->content;
@@ -78,7 +78,7 @@ int	*ft_intcpy(int	*arr, int size)
 	i = 0;
 	cpy = (int *) malloc (sizeof(int) * size);
 	if (!arr || !cpy)
-		ft_display_exit();
+		ft_display_error();
 	while (i < size)
 	{
 		cpy[i] = arr[i];

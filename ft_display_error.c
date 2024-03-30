@@ -1,36 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   display_error.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/19 10:01:07 by jeandrad          #+#    #+#             */
-/*   Updated: 2023/12/19 10:01:28 by jeandrad         ###   ########.fr       */
+/*   Created: 2024/03/27 12:02:56 by jeandrad          #+#    #+#             */
+/*   Updated: 2024/03/30 10:31:53 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_display_error(void)
 {
-	t_list	*new_node;
-
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
-		return (NULL);
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
+	ft_putstr_fd("Error\n", 2);
+	exit(0);
 }
-
-/*
-#include <stdio.h>
-int main(){
-    t_list *list;
-    char str []= "Hello World!";
-    list = ft_lstnew_node(str);
-    printf("%s\n", list->content);
-    return (0);
-}
-*/
