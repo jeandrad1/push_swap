@@ -38,6 +38,8 @@ void	ft_sort_three(t_list **stack_a);
 void	ft_sort_five(t_list **stack_a, t_list **stack_b);
 
 void	ft_check_argv(int argc, char **argv, t_list **stack_a);
+void	ft_check_format(int argc, char **argv);
+
 void	ft_move_to_b(t_list **stack_a, t_list **stack_b, int *arr, int max);
 void	ft_move_to_a(t_list **stack_a, t_list **stack_b);
 int		ft_best_nbr_b(t_list **stack_b, int size_b,
