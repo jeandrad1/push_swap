@@ -45,7 +45,7 @@ void	ft_check_argv(int argc, char **argv, t_list **stack_a)
 
 	arg = NULL;
 	size = 0;
-	if (argc == 2)
+	if (argc == 2 && argv[1][0] != '\0')
 	{
 		arg = ft_split(argv[1], ' ');
 		while (arg[size] != NULL)
@@ -62,14 +62,17 @@ int	main(int argc, char **argv)
 	t_list	*stack_a;
 	t_list	*stack_b;
 	int		size;
-//	char	**arg;
+	char	**arg;
 
 	stack_a = NULL;
 	stack_b = NULL;
-//	arg = NULL;
+	arg = NULL;
 	size = 0;
-	if (argc < 2)
-		return (0);
+	if (argc < 2 || (argc == 2 && argv[1][0] == '\0'))
+	{
+		ft_display_error();
+		return (1);
+	}
 	else
 		ft_check_argv(argc, argv, &stack_a);
 	size = ft_lstsize(stack_a);
