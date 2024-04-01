@@ -38,19 +38,18 @@ void	ft_lst_split(t_list **stack_a, t_list **stack_b, int size)
 	free (arr);
 }
 
-void	ft_check_format(int argc, char **argv)
-{
-	int	i;
+int ft_check_format(char *str) {
+    char *endptr;
 
-	i = 0;
-	if (argc == 2 && argv[1][0] != '\0')
+    while (*str != '\0') 
 	{
-		while (argv[1][i])
-		{
-			if (argv[1][i] == 32 && argv[1][i + 1] == 32)	
-				return ;
-		}
-	}
+        while (ft_isspace((unsigned char)*str)) str++;
+        if (*str == '\0') break;
+        ft_strtol(str, &endptr, 10);
+        if (endptr == str) return -1;
+        str = endptr;
+    }
+    return 0;
 }
 
 void	ft_check_argv(int argc, char **argv, t_list **stack_a)
@@ -61,7 +60,7 @@ void	ft_check_argv(int argc, char **argv, t_list **stack_a)
 	arg = NULL;
 	size = 0;
 
-	ft_check_format(argc, argv);
+//	ft_check_format(argc, argv);
 	if (argc == 2 && argv[1][0] != '\0')
 	{
 		arg = ft_split(argv[1], ' ');
@@ -81,11 +80,11 @@ int	main(int argc, char **argv)
 	t_list	*stack_a;
 	t_list	*stack_b;
 	int		size;
-	char	**arg;
+//	char	**arg;
 
 	stack_a = NULL;
 	stack_b = NULL;
-	arg = NULL;
+//	arg = NULL;
 	size = 0;
 	if (argc < 2 || (argc == 2 && argv[1][0] == '\0'))
 	{
