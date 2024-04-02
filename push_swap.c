@@ -71,9 +71,11 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 //	arg = NULL;
 	size = 0;
-	//Crear una funcion que devuelva 0 si el argumento es correcto y 1 si no lo es. Para sustituir en el if de abajo.
 	if (argc < 2)
-		return(0);
+		return (1);
+//	if (argc == 2
+//		funcion checker int argument_check del string (solo admite numeros y espacios, si solo hay espacios o hay alguna letra da error);
+//		return (1);
 	else
 		ft_check_argv(argc, argv, &stack_a);
 	size = ft_lstsize(stack_a);
