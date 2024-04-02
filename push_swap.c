@@ -38,20 +38,6 @@ void	ft_lst_split(t_list **stack_a, t_list **stack_b, int size)
 	free (arr);
 }
 
-int ft_check_format(char *str) {
-    char *endptr;
-
-    while (*str != '\0') 
-	{
-        while (ft_isspace((unsigned char)*str)) str++;
-        if (*str == '\0') break;
-        ft_strtol(str, &endptr, 10);
-        if (endptr == str) return -1;
-        str = endptr;
-    }
-    return 0;
-}
-
 void	ft_check_argv(int argc, char **argv, t_list **stack_a)
 {
 	int		size;
@@ -60,7 +46,6 @@ void	ft_check_argv(int argc, char **argv, t_list **stack_a)
 	arg = NULL;
 	size = 0;
 
-//	ft_check_format(argc, argv);
 	if (argc == 2 && argv[1][0] != '\0')
 	{
 		arg = ft_split(argv[1], ' ');
@@ -86,11 +71,9 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 //	arg = NULL;
 	size = 0;
-	if (argc < 2 || (argc == 2 && argv[1][0] == '\0'))
-	{
-		ft_display_error();
-		return (1);
-	}
+	//Crear una funcion que devuelva 0 si el argumento es correcto y 1 si no lo es. Para sustituir en el if de abajo.
+	if (argc < 2)
+		return(0);
 	else
 		ft_check_argv(argc, argv, &stack_a);
 	size = ft_lstsize(stack_a);
