@@ -1,6 +1,6 @@
 .DS_Store
 a.out
-a.exe
+*.exe
 .vscode/settings.json
 *.o
 *.out

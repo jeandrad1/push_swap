@@ -72,14 +72,12 @@ int arg_str_check(char *str) {
     // Recorre cada carácter del string
     while (str[i] != '\0')
 	{
-		if (ft_isalpha(str[i]) == 1)
-			return 1;
         if (ft_isdigit(str[i]) == 0 && str[i] != 32)
             return 1;
 		i++;
     }
     // Si todos los caracteres son espacios o dígitos, devuelve 0
-    return 0;
+    return (0);
 }
 
 int	main(int argc, char **argv)
