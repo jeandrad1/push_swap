@@ -46,7 +46,7 @@ void	ft_check_argv(int argc, char **argv, t_list **stack_a)
 	arg = NULL;
 	size = 0;
 
-	if (argc == 2 && argv[1][0] != '\0')
+	if (argc == 2)
 	{
 		arg = ft_split(argv[1], ' ');
 		while (arg[size] != NULL)
