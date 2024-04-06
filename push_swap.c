@@ -103,11 +103,11 @@ int	main(int argc, char **argv)
 	{
 		if (arg_str_check(argv[1]) == 1)
 		{
+			ft_display_error();
 			return (1);
 		}
 	}
-	else
-		ft_check_argv(argc, argv, &stack_a);
+	ft_check_argv(argc, argv, &stack_a);
 	size = ft_lstsize(stack_a);
 	if (size == 2)
 		return (0);
