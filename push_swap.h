@@ -38,7 +38,7 @@ void	ft_sort_three(t_list **stack_a);
 void	ft_sort_five(t_list **stack_a, t_list **stack_b);
 
 void	ft_check_argv(int argc, char **argv, t_list **stack_a);
-int		arg_str_check(char *str);
+//int		arg_str_check(const char *str);
 
 void	ft_move_to_b(t_list **stack_a, t_list **stack_b, int *arr, int max);
 void	ft_move_to_a(t_list **stack_a, t_list **stack_b);

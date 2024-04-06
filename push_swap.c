@@ -61,23 +61,29 @@ void	ft_check_argv(int argc, char **argv, t_list **stack_a)
 }
 
 // Provisional, todavia no funciona da sig fault cuando arg es un string
-int arg_str_check(char *str) {
+int	arg_str_check(const char *str)
+{
+	int	n;
 
-	int i;
-
-	i = 0;
-    // Si el string es NULL o está vacío, devuelve 1
-    if (str == NULL || *str == '\0')
-        return 1;
-    // Recorre cada carácter del string
-    while (str[i] != '\0')
+	n = 0;
+	while (*str)
 	{
-        if (ft_isdigit(str[i]) == 0 && str[i] != 32)
-            return 1;
-		i++;
-    }
-    // Si todos los caracteres son espacios o dígitos, devuelve 0
-    return (0);
+		if ((!ft_isdigit(*str) && *str != 32 ) || ft_isalpha(*str))
+		{
+			ft_display_error();
+			return (1);
+		}
+		if (ft_isdigit(*str))
+			n++;
+		str++;
+	}
+	if (n > 0)
+		return (0);
+	else
+	{
+		ft_display_error();
+		return (1);
+	}
 }
 
 int	main(int argc, char **argv)
@@ -95,12 +101,11 @@ int	main(int argc, char **argv)
 		return (1);
 	if (argc == 2)
 	{
-		arg_str_check(argv[1]);
 		if (arg_str_check(argv[1]) == 1)
+		{
 			return (1);
+		}
 	}
-//		funcion checker int argument_check del string (solo admite numeros y espacios, si solo hay espacios o hay alguna letra da error);
-//		return (1);
 	else
 		ft_check_argv(argc, argv, &stack_a);
 	size = ft_lstsize(stack_a);
