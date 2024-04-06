@@ -22,6 +22,7 @@ void	ft_lst_order(t_list **stack_a);
 void	ft_lst_inverted(t_list **stack_a);
 void	ft_lst_delete(t_list **stack);
 void	ft_display_error(void);
+
 void	ft_sa(t_list **stack_a);
 void	ft_sb(t_list **stack_b);
 void	ft_ss(t_list **stack_a, t_list **stack_b);
@@ -35,8 +36,13 @@ void	ft_rrb(t_list **stack_b);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
 void	ft_sort_three(t_list **stack_a);
 void	ft_sort_five(t_list **stack_a, t_list **stack_b);
+
 void	ft_check_argv(int argc, char **argv, t_list **stack_a);
-int		arg_str_check(const char *str);
+int	ft_check_format(int argc, char **argv);
+int	ft_str_format_check(const char *str);
+int	ft_n_format_check(const char *str);
+
+
 void	ft_move_to_b(t_list **stack_a, t_list **stack_b, int *arr, int max);
 void	ft_move_to_a(t_list **stack_a, t_list **stack_b);
 int		ft_best_nbr_b(t_list **stack_b, int size_b,
@@ -46,6 +52,7 @@ int		ft_best_comb(int *arr_a, int *arr_b, int size);
 int		ft_best_comb_helper(int *arr_a, int *arr_b, int *tmp, int size);
 int		ft_move_a(int a, int b, t_list **stack_a, t_list **stack_b);
 void	ft_search_min(t_list **stack_a, int size);
+
 int		*ft_copy_cont(t_list *stack_a, int size);
 int		*ft_intcpy(int	*arr, int size);
 

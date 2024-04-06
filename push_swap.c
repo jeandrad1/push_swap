@@ -38,6 +38,28 @@ void	ft_lst_split(t_list **stack_a, t_list **stack_b, int size)
 	free (arr);
 }
 
+int	ft_check_format(int argc, char **argv)
+{
+	int	control;
+	int	i;
+
+	control = 0;
+	i = 0;
+	if (argc == 2)
+		control = ft_str_format_check(argv[1]);
+	if (argc > 2)
+	{
+		while (i < argc)
+		{
+			control = ft_n_format_check(argv[i]);
+			if (control == 1)
+				return (1);
+			i++;
+		}
+	}
+	return (control);
+}
+
 void	ft_check_argv(int argc, char **argv, t_list **stack_a)
 {
 	int		size;
@@ -45,9 +67,10 @@ void	ft_check_argv(int argc, char **argv, t_list **stack_a)
 
 	arg = NULL;
 	size = 0;
-
 	if (argc == 2)
 	{
+		if (ft_str_format_check(argv[1]) == 1)
+			return ;
 		arg = ft_split(argv[1], ' ');
 		while (arg[size] != NULL)
 			size++;
@@ -56,34 +79,6 @@ void	ft_check_argv(int argc, char **argv, t_list **stack_a)
 	}
 	else if (argc >= 3)
 		ft_write_lst(stack_a, argc, argv, 1);
-	else
-		return ;
-}
-
-// Provisional, todavia no funciona da sig fault cuando arg es un string
-int	arg_str_check(const char *str)
-{
-	int	n;
-
-	n = 0;
-	while (*str)
-	{
-		if ((!ft_isdigit(*str) && *str != 32 ) || ft_isalpha(*str))
-		{
-			ft_display_error();
-			return (1);
-		}
-		if (ft_isdigit(*str))
-			n++;
-		str++;
-	}
-	if (n > 0)
-		return (0);
-	else
-	{
-		ft_display_error();
-		return (1);
-	}
 }
 
 int	main(int argc, char **argv)
@@ -98,16 +93,9 @@ int	main(int argc, char **argv)
 //	arg = NULL;
 	size = 0;
 	if (argc < 2)
-		return (1);
-	if (argc == 2)
-	{
-		if (arg_str_check(argv[1]) == 1)
-		{
-			ft_display_error();
-			return (1);
-		}
-	}
-	ft_check_argv(argc, argv, &stack_a);
+		return (0);
+	else
+		ft_check_argv(argc, argv, &stack_a);	
 	size = ft_lstsize(stack_a);
 	if (size == 2)
 		return (0);
