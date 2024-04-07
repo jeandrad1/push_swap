@@ -40,21 +40,35 @@ int	ft_str_format_check(const char *str)
 
 }
 
-int	ft_n_format_check(const char *str)
+int	ft_atoi_mod(const char *str)
 {
-	int	i;
+	int		i;
+	int		sign;
+	long	n;
 
 	i = 0;
-	if (str[i] != '+' && str[i] != '-')
-		i++;
-	while (str[i])
+	sign = 1;
+	n = 0;
+
+	if (str[i] == 45 || str[i] == 43 && ft_isdigit(str[i + 1]))
 	{
-		if (!ft_isdigit(str[i]))
-		{
-			ft_display_error();
-			return (1);
-		}
+		if (str[i] == 45)
+			sign = -1;
 		i++;
 	}
-	return (0);
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		if (!(ft_isdigit(str[i]) && str[i] != 32) || ft_isalpha(str[i]))
+		{	
+			ft_display_error();
+		}
+		n = n * 10 + (str[i] - 48);
+		i++;
+	}
+	if (!ft_isdigit(str[i]) && str[i] != '\0')
+		ft_display_error();
+	n *= sign;
+	if (n > 2147483647 || n < -2147483648)
+		ft_display_error();
+	return ((int) n);
 }

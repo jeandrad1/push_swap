@@ -47,16 +47,6 @@ int	ft_check_format(int argc, char **argv)
 	i = 0;
 	if (argc == 2)
 		control = ft_str_format_check(argv[1]);
-	if (argc > 2)
-	{
-		while (i < argc)
-		{
-			control = ft_n_format_check(argv[i]);
-			if (control == 1)
-				return (1);
-			i++;
-		}
-	}
 	return (control);
 }
 

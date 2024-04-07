@@ -80,7 +80,7 @@ void	ft_write_lst(t_list **stack_a, int argc, char **argv, int i)
 	tmp = NULL;
 	while (i < argc)
 	{
-		tmp = ft_lstnew(ft_atoi(argv[i]));
+		tmp = ft_lstnew(ft_atoi_mod(argv[i]));
 		ft_lstadd_back(stack_a, tmp);
 		ft_lstcheck(*stack_a, tmp->content);
 		i++;
