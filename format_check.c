@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 15:25:39 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/04/09 16:52:58 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/04/06 15:47:22 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	ft_str_format_check(const char *str)
 		ft_display_error();
 		return (1);
 	}
+
 }
 
 int	ft_atoi_mod(const char *str)
@@ -48,6 +49,7 @@ int	ft_atoi_mod(const char *str)
 	i = 0;
 	sign = 1;
 	n = 0;
+
 	if (str[i] == 45 || (str[i] == 43 && ft_isdigit(str[i + 1])))
 	{
 		if (str[i] == 45)
@@ -57,13 +59,16 @@ int	ft_atoi_mod(const char *str)
 	while (str[i] >= 48 && str[i] <= 57)
 	{
 		if (!(ft_isdigit(str[i]) && str[i] != 32) || ft_isalpha(str[i]))
+		{	
 			ft_display_error();
+		}
 		n = n * 10 + (str[i] - 48);
 		i++;
 	}
 	if (!ft_isdigit(str[i]) && str[i] != '\0')
 		ft_display_error();
+	n *= sign;
 	if (n > 2147483647 || n < -2147483648)
 		ft_display_error();
-	return ((int)(n * sign));
+	return ((int) n);
 }
