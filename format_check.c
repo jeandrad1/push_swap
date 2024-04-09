@@ -50,7 +50,7 @@ int	ft_atoi_mod(const char *str)
 	sign = 1;
 	n = 0;
 
-	if (str[i] == 45 || str[i] == 43 && ft_isdigit(str[i + 1]))
+	if (str[i] == 45 || (str[i] == 43 && ft_isdigit(str[i + 1])))
 	{
 		if (str[i] == 45)
 			sign = -1;

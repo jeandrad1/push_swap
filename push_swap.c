@@ -41,10 +41,8 @@ void	ft_lst_split(t_list **stack_a, t_list **stack_b, int size)
 int	ft_check_format(int argc, char **argv)
 {
 	int	control;
-	int	i;
-
+	
 	control = 0;
-	i = 0;
 	if (argc == 2)
 		control = ft_str_format_check(argv[1]);
 	return (control);
