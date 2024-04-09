@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 10:23:32 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/03/30 10:30:06 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/04/09 16:54:11 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ t_list	*ft_lstnew(int content)
 
 	new_node = (t_list *)malloc(sizeof(t_list));
 	if (!new_node)
+	{
+		free(new_node);
 		return (NULL);
+	}
 	new_node->content = content;
 	new_node->next = NULL;
 	return (new_node);
