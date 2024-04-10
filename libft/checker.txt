@@ -1,0 +1,418 @@
+//check_one
+
+void	ft_sa_check(t_list **stack_a)
+{
+	t_list	*tmp;
+	t_list	*tmp2;
+
+	tmp = *stack_a;
+	tmp2 = tmp->next;
+	*stack_a = tmp2;
+	tmp->next = tmp2->next;
+	tmp2->next = tmp;
+	return ;
+}
+
+void	ft_sb_check(t_list **stack_b)
+{
+	t_list	*tmp;
+	t_list	*tmp2;
+
+	tmp = *stack_b;
+	tmp2 = tmp->next;
+	*stack_b = tmp2;
+	tmp->next = tmp2->next;
+	tmp2->next = tmp;
+	return ;
+}
+
+void	ft_ss_check(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*tmp;
+	t_list	*tmp2;
+
+	tmp = *stack_a;
+	tmp2 = tmp->next;
+	*stack_a = tmp2;
+	tmp->next = tmp2->next;
+	tmp2->next = tmp;
+	tmp = NULL;
+	tmp2 = NULL;
+	tmp = *stack_b;
+	tmp2 = tmp->next;
+	*stack_b = tmp2;
+	tmp->next = tmp2->next;
+	tmp2->next = tmp;
+	return ;
+}
+
+void	ft_pa_check(t_list **stack_b, t_list **stack_a)
+{
+	t_list	*tmp;
+
+	if (*stack_b == NULL)
+		return ;
+	tmp = *stack_b;
+	*stack_b = (*stack_b)->next;
+	tmp->next = *stack_a;
+	*stack_a = tmp;
+	return ;
+}
+
+void	ft_pb_check(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*tmp;
+
+	if (*stack_a == NULL)
+		return ;
+	tmp = *stack_a;
+	*stack_a = (*stack_a)->next;
+	tmp->next = *stack_b;
+	*stack_b = tmp;
+	return ;
+}
+
+//check_three
+
+void	ft_rra_check(t_list **stack_a)
+{
+	t_list	*last;
+	t_list	*tmp;
+
+	last = *stack_a;
+	tmp = *stack_a;
+	while (last->next != NULL)
+	{
+		tmp = last;
+		last = last->next;
+	}
+	last->next = *stack_a;
+	*stack_a = last;
+	tmp->next = NULL;
+}
+
+void	ft_rrb_check(t_list **stack_b)
+{
+	t_list	*last;
+	t_list	*tmp;
+
+	last = *stack_b;
+	tmp = *stack_b;
+	while (last->next != NULL)
+	{
+		tmp = last;
+		last = last->next;
+	}
+	last->next = *stack_b;
+	*stack_b = last;
+	tmp->next = NULL;
+}
+
+void	ft_rrr_check(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*last;
+	t_list	*tmp;
+
+	last = *stack_a;
+	tmp = *stack_a;
+	while (last->next != NULL)
+	{
+		tmp = last;
+		last = last->next;
+	}
+	last->next = *stack_a;
+	*stack_a = last;
+	tmp->next = NULL;
+	last = *stack_b;
+	tmp = *stack_b;
+	while (last->next != NULL)
+	{
+		tmp = last;
+		last = last->next;
+	}
+	last->next = *stack_b;
+	*stack_b = last;
+	tmp->next = NULL;
+	return ;
+}
+
+void	ft_ra_check(t_list **stack_a)
+{
+	t_list	*last;
+	t_list	*first;
+
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
+		return ;
+	last = *stack_a;
+	first = *stack_a;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_a = first->next;
+	first->next = NULL;
+	last->next = first;
+	return ;
+}
+
+void	ft_rb_check(t_list **stack_b)
+{
+	t_list	*last;
+	t_list	*first;
+
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
+		return ;
+	last = *stack_b;
+	first = *stack_b;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_b = first->next;
+	first->next = NULL;
+	last->next = first;
+	return ;
+}
+
+void	ft_rr_check(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*last;
+	t_list	*first;
+
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
+		return ;
+	last = *stack_a;
+	first = *stack_a;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_a = first->next;
+	first->next = NULL;
+	last->next = first;
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
+		return ;
+	last = *stack_b;
+	first = *stack_b;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_b = first->next;
+	first->next = NULL;
+	last->next = first;
+	return ;
+}
+
+//check_two
+
+void	ft_ra_check(t_list **stack_a)
+{
+	t_list	*last;
+	t_list	*first;
+
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
+		return ;
+	last = *stack_a;
+	first = *stack_a;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_a = first->next;
+	first->next = NULL;
+	last->next = first;
+	return ;
+}
+
+void	ft_rb_check(t_list **stack_b)
+{
+	t_list	*last;
+	t_list	*first;
+
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
+		return ;
+	last = *stack_b;
+	first = *stack_b;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_b = first->next;
+	first->next = NULL;
+	last->next = first;
+	return ;
+}
+
+void	ft_rr_check(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*last;
+	t_list	*first;
+
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
+		return ;
+	last = *stack_a;
+	first = *stack_a;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_a = first->next;
+	first->next = NULL;
+	last->next = first;
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
+		return ;
+	last = *stack_b;
+	first = *stack_b;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_b = first->next;
+	first->next = NULL;
+	last->next = first;
+	return ;
+}
+
+//checker
+
+void	ft_rrr_or_death(t_list **stack_a, t_list **stack_b, char *str)
+{
+	if (ft_strcmp(str, "rra\n"))
+		ft_rra_check(stack_a);
+	else if (ft_strcmp(str, "rrb\n"))
+		ft_rrb_check(stack_b);
+	else if (ft_strcmp(str, "rrr\n"))
+		ft_rrr_check(stack_a, stack_b);
+	else
+		ft_display_exit();
+}
+
+void	ft_exec_sort(t_list **stack_a, t_list **stack_b, char *str)
+{
+	while (str != NULL)
+	{
+		if (ft_strcmp(str, "sa\n"))
+			ft_sa_check(stack_a);
+		else if (ft_strcmp(str, "sb\n"))
+			ft_sb_check(stack_b);
+		else if (ft_strcmp(str, "ss\n"))
+			ft_ss_check(stack_a, stack_b);
+		else if (ft_strcmp(str, "pa\n"))
+			ft_pa_check(stack_b, stack_a);
+		else if (ft_strcmp(str, "pb\n"))
+			ft_pb_check(stack_a, stack_b);
+		else if (ft_strcmp(str, "ra\n"))
+			ft_ra_check(stack_a);
+		else if (ft_strcmp(str, "rb\n"))
+			ft_rb_check(stack_b);
+		else if (ft_strcmp(str, "rr\n"))
+			ft_rr_check(stack_a, stack_b);
+		else
+			ft_rrr_or_death(stack_a, stack_b, str);
+		str = ft_get_next_line_gnl(0);
+	}
+}
+
+void	ft_check_sort(t_list *stack_a)
+{
+	while (stack_a->next != NULL)
+	{
+		if (stack_a->content > (stack_a->next)->content)
+		{
+			write(1, "KO\n", 3);
+			return ;
+		}
+		stack_a = stack_a->next;
+	}
+	write(1, "OK\n", 3);
+	return ;
+}
+
+void	ft_check_argv_c(int argc, char **argv, t_list **stack_a)
+{
+	int		size;
+	char	**arg;
+
+	arg = NULL;
+	size = 0;
+	if (argc == 2)
+	{
+		arg = ft_split(argv[1], ' ');
+		while (arg[size] != NULL)
+			size++;
+		ft_check_write_lst(stack_a, size, arg, 0);
+		free(arg);
+	}
+	else if (argc >= 3)
+		ft_check_write_lst(stack_a, argc, argv, 1);
+}
+
+int	main(int argc, char *argv[])
+{
+	t_list	*stack_a;
+	t_list	*stack_b;
+	char	*str;
+	int		size;
+
+	stack_a = NULL;
+	stack_b = NULL;
+	size = 0;
+	if (argc < 2)
+		return (0);
+	else
+		ft_check_argv_c(argc, argv, &stack_a);
+	str = ft_get_next_line_gnl(0);
+	ft_exec_sort(&stack_a, &stack_b, str);
+	ft_check_sort(stack_a);
+	return (0);
+}
+
+//chercker_write
+
+static void	ft_lstcheck_c(t_list *stack_a, int check)
+{
+	while (stack_a->next != NULL)
+	{
+		if (stack_a->content == check)
+			ft_display_exit();
+		stack_a = stack_a->next;
+	}
+	return ;
+}
+
+static void	ft_lst_order_c(t_list **stack_a)
+{
+	t_list	*tmp;
+	t_list	*tmp2;
+
+	tmp = *stack_a;
+	tmp2 = tmp->next;
+	while (tmp2 != NULL)
+	{
+		if (tmp->content > tmp2->content)
+			return ;
+		tmp = tmp->next;
+		tmp2 = tmp2->next;
+	}
+	exit(0);
+}
+
+void	ft_check_lst_inverted(t_list **stack_a)
+{
+	t_list	*tmp;
+	t_list	*tmp2;
+
+	tmp = *stack_a;
+	tmp2 = tmp->next;
+	while (tmp2 != NULL)
+	{
+		if (tmp->content < tmp2->content)
+			return ;
+		tmp = tmp->next;
+		tmp2 = tmp2->next;
+	}
+	ft_sa_check(stack_a);
+	return ;
+}
+
+void	ft_check_write_lst(t_list **stack_a, int argc, char **argv, int i)
+{
+	t_list	*tmp;
+
+	tmp = NULL;
+	while (i < argc)
+	{
+		tmp = ft_lstnew(ft_atoi(argv[i]));
+		ft_lstadd_back(stack_a, tmp);
+		ft_lstcheck_c(*stack_a, tmp->content);
+		i++;
+	}
+	ft_lst_order_c(stack_a);
+	ft_check_lst_inverted(stack_a);
+	tmp = NULL;
+}
