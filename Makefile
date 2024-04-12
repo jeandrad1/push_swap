@@ -21,22 +21,25 @@ RM			=	rm -f
 CFLAGS		=	-Wall -Wextra -Werror
 
 $(NAME):	$(OBJ)
-			make -C ./libft
-			$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LIBFT)
+			@make -s -C ./libft
+			@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LIBFT)
+			@echo "PUSH SWAP Compilation: SUCCESS"
 
 bonus:		$(BONUS_OBJ)
-			make -C ./libft
-			$(CC) $(CFLAGS) -o $(NAME) $(BONUS_OBJ) $(LIBFT)
+			@ make -s -C ./libft
+			@$(CC) $(CFLAGS) -o $(NAME) $(BONUS_OBJ) $(LIBFT)
+			@echo "PUSH SWAP BONUS Compilation: SUCCESS"
 
 all:		$(NAME) bonus
 
 clean:
-			make clean -C libft
-			${RM} $(OBJ) ${BONUS_OBJ}
+			@make -s clean -C libft
+			@${RM} $(OBJ) ${BONUS_OBJ}
 
 fclean: 	clean
-			make fclean -C libft
-			${RM} $(NAME) ${OBJ} ${BONUS_OBJ}
+			@make -s fclean -C libft
+			@${RM} $(NAME) ${OBJ} ${BONUS_OBJ}
+			@echo "CLEANING SUCCESS"
 
 re:			fclean bonus
 
