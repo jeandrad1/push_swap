@@ -6,25 +6,11 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 10:00:22 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/02/14 11:43:29 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/04/12 18:27:06 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include "libft.h"
-
-int	ft_strlen_gnl(char *s)
-{
-	int	i;
-
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-		i++;
-	return (i);
-}
 
 char	*ft_strjoin_gnl(char *s, char c)
 {
