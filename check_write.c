@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:37:22 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/04/10 16:37:33 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/04/12 18:21:33 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	ft_check_write_lst(t_list **stack_a, int argc, char **argv, int i)
 	tmp = NULL;
 	while (i < argc)
 	{
-		tmp = ft_lstnew(ft_atoi(argv[i]));
+		tmp = ft_lstnew(ft_atoi_mod(argv[i]));
 		ft_lstadd_back(stack_a, tmp);
 		ft_lstcheck_c(*stack_a, tmp->content);
 		i++;

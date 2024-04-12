@@ -9,7 +9,7 @@ SRC			=	push_swap.c list_utils.c op_one.c op_two.c\
 
 BONUS_SRC	=	checker.c  check_write.c\
 				check_one.c check_two.c check_three.c\
-				ft_display_error.c ft_lst_mod.c\
+				ft_display_error.c ft_lst_mod.c format_check.c\
 				
 LIBFT		=	libft/libft.a
 
