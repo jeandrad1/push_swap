@@ -17,7 +17,7 @@ static void	ft_lstcheck_c(t_list *stack_a, int check)
 	while (stack_a->next != NULL)
 	{
 		if (stack_a->content == check)
-			ft_display_exit();
+			ft_display_error();
 		stack_a = stack_a->next;
 	}
 	return ;

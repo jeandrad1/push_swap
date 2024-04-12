@@ -12,38 +12,37 @@
 
 #include "push_swap.h"
 
-
 void	ft_rrr_or_death(t_list **stack_a, t_list **stack_b, char *str)
 {
-	if (ft_strcmp(str, "rra\n"))
+	if (ft_strncmp(str, "rra\n",4))
 		ft_rra_check(stack_a);
-	else if (ft_strcmp(str, "rrb\n"))
+	else if (ft_strncmp(str, "rrb\n",4))
 		ft_rrb_check(stack_b);
-	else if (ft_strcmp(str, "rrr\n"))
+	else if (ft_strncmp(str, "rrr\n",4))
 		ft_rrr_check(stack_a, stack_b);
 	else
-		ft_display_exit();
+		ft_display_error();
 }
 
 void	ft_exec_sort(t_list **stack_a, t_list **stack_b, char *str)
 {
 	while (str != NULL)
 	{
-		if (ft_strcmp(str, "sa\n"))
+		if (ft_strncmp(str, "sa\n",3))
 			ft_sa_check(stack_a);
-		else if (ft_strcmp(str, "sb\n"))
+		else if (ft_strncmp(str, "sb\n",3))
 			ft_sb_check(stack_b);
-		else if (ft_strcmp(str, "ss\n"))
+		else if (ft_strncmp(str, "ss\n",3))
 			ft_ss_check(stack_a, stack_b);
-		else if (ft_strcmp(str, "pa\n"))
+		else if (ft_strncmp(str, "pa\n",3))
 			ft_pa_check(stack_b, stack_a);
-		else if (ft_strcmp(str, "pb\n"))
+		else if (ft_strncmp(str, "pb\n",3))
 			ft_pb_check(stack_a, stack_b);
-		else if (ft_strcmp(str, "ra\n"))
+		else if (ft_strncmp(str, "ra\n",3))
 			ft_ra_check(stack_a);
-		else if (ft_strcmp(str, "rb\n"))
+		else if (ft_strncmp(str, "rb\n",3))
 			ft_rb_check(stack_b);
-		else if (ft_strcmp(str, "rr\n"))
+		else if (ft_strncmp(str, "rr\n",3))
 			ft_rr_check(stack_a, stack_b);
 		else
 			ft_rrr_or_death(stack_a, stack_b, str);
@@ -90,11 +89,11 @@ int	main(int argc, char *argv[])
 	t_list	*stack_a;
 	t_list	*stack_b;
 	char	*str;
-	int		size;
+//	int		size;
 
 	stack_a = NULL;
 	stack_b = NULL;
-	size = 0;
+//	size = 0;
 	if (argc < 2)
 		return (0);
 	else

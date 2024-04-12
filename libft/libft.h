@@ -58,4 +58,10 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+
+int					ft_strlen_gnl(char *s);
+char				*ft_strjoin_gnl(char *s, char c);
+char				*ft_read_line_gnl(int fd, char *dst);
+char				*ft_get_next_line_gnl(int fd);
+
 #endif
