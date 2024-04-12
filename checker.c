@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:36:04 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/04/10 16:36:48 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/04/12 16:21:10 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ int	main(int argc, char *argv[])
 	t_list	*stack_b;
 	char	*str;
 //	int		size;
-
 	stack_a = NULL;
 	stack_b = NULL;
 //	size = 0;

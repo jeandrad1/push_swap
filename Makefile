@@ -7,12 +7,12 @@ SRC			=	push_swap.c list_utils.c op_one.c op_two.c\
 
 BONUS_SRC	=	checker.c  check_write.c\
 				check_one.c check_two.c check_three.c\
+				ft_display_error.c ft_lst_mod.c\
 				
-
 LIBFT		=	libft/libft.a
 
 OBJ			=	$(SRC:.c=.o)
-BONUS_OBJ	=	$(BONUS_SRC:.c=.o)
+BONUS_OBJ	=	$(BONUS_SRC:.c=.o) 
 
 CC			=	gcc
 

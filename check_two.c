@@ -6,80 +6,68 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:13:21 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/04/10 16:14:55 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/04/12 16:28:51 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sa_check(t_list **stack_a)
+void	ft_ra_check(t_list **stack_a)
 {
-	t_list	*tmp;
-	t_list	*tmp2;
+	t_list	*last;
+	t_list	*first;
 
-	tmp = *stack_a;
-	tmp2 = tmp->next;
-	*stack_a = tmp2;
-	tmp->next = tmp2->next;
-	tmp2->next = tmp;
-	return ;
-}
-
-void	ft_sb_check(t_list **stack_b)
-{
-	t_list	*tmp;
-	t_list	*tmp2;
-
-	tmp = *stack_b;
-	tmp2 = tmp->next;
-	*stack_b = tmp2;
-	tmp->next = tmp2->next;
-	tmp2->next = tmp;
-	return ;
-}
-
-void	ft_ss_check(t_list **stack_a, t_list **stack_b)
-{
-	t_list	*tmp;
-	t_list	*tmp2;
-
-	tmp = *stack_a;
-	tmp2 = tmp->next;
-	*stack_a = tmp2;
-	tmp->next = tmp2->next;
-	tmp2->next = tmp;
-	tmp = NULL;
-	tmp2 = NULL;
-	tmp = *stack_b;
-	tmp2 = tmp->next;
-	*stack_b = tmp2;
-	tmp->next = tmp2->next;
-	tmp2->next = tmp;
-	return ;
-}
-
-void	ft_pa_check(t_list **stack_b, t_list **stack_a)
-{
-	t_list	*tmp;
-
-	if (*stack_b == NULL)
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
 		return ;
-	tmp = *stack_b;
-	*stack_b = (*stack_b)->next;
-	tmp->next = *stack_a;
-	*stack_a = tmp;
+	last = *stack_a;
+	first = *stack_a;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_a = first->next;
+	first->next = NULL;
+	last->next = first;
 	return ;
 }
 
-void	ft_pb_check(t_list **stack_a, t_list **stack_b)
+void	ft_rb_check(t_list **stack_b)
 {
-	t_list	*tmp;
+	t_list	*last;
+	t_list	*first;
 
-	if (*stack_a == NULL)
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
 		return ;
-	tmp = *stack_a;
-	*stack_a = (*stack_a)->next;
-	tmp->next = *stack_b;
-	*stack_b = tmp;
+	last = *stack_b;
+	first = *stack_b;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_b = first->next;
+	first->next = NULL;
+	last->next = first;
+	return ;
+}
+
+void	ft_rr_check(t_list **stack_a, t_list **stack_b)
+{
+	t_list	*last;
+	t_list	*first;
+
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
+		return ;
+	last = *stack_a;
+	first = *stack_a;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_a = first->next;
+	first->next = NULL;
+	last->next = first;
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
+		return ;
+	last = *stack_b;
+	first = *stack_b;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_b = first->next;
+	first->next = NULL;
+	last->next = first;
 	return ;
 }
