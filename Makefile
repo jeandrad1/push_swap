@@ -1,4 +1,6 @@
-NAME		=	push_swap 
+NAME		=	push_swap
+
+BONUS_NAME	=	checker
 
 SRC			=	push_swap.c list_utils.c op_one.c op_two.c\
 				op_three.c order_functions.c order_two.c order_three.c\
@@ -26,8 +28,8 @@ $(NAME):	$(OBJ)
 			@echo "PUSH SWAP Compilation: SUCCESS"
 
 bonus:		$(BONUS_OBJ)
-			@ make -s -C ./libft
-			@$(CC) $(CFLAGS) -o $(NAME) $(BONUS_OBJ) $(LIBFT)
+			@make -s -C ./libft
+			@$(CC) $(CFLAGS) -o $(BONUS_NAME) $(BONUS_OBJ) $(LIBFT)
 			@echo "PUSH SWAP BONUS Compilation: SUCCESS"
 
 all:		$(NAME) bonus
@@ -38,7 +40,7 @@ clean:
 
 fclean: 	clean
 			@make -s fclean -C libft
-			@${RM} $(NAME) ${OBJ} ${BONUS_OBJ}
+			@${RM} $(NAME) ${BONUS_NAME} ${OBJ} ${BONUS_OBJ}
 			@echo "CLEANING SUCCESS"
 
 re:			fclean bonus
