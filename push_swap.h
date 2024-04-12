@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "./libft/libft.h"
+# include <stdio.h>
 
 void	ft_lst_split(t_list **stack_a, t_list **stack_b, int size);
 void	ft_write_lst(t_list **stack_a, int argc, char **argv, int i);
@@ -91,5 +92,6 @@ void	ft_rr_check(t_list **stack_a, t_list **stack_b);
 void	ft_rra_check(t_list **stack_a);
 void	ft_rrb_check(t_list **stack_b);
 void	ft_rrr_check(t_list **stack_a, t_list **stack_b);
+int	ft_strcmp(char *s1, char *s2);
 
 #endif
