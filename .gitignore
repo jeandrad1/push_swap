@@ -12,3 +12,5 @@ push_swap_test.sh
 0
 checker_linux
 push_swap_test_linux.sh
+checker
+push_swap
