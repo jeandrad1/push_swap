@@ -15,6 +15,7 @@
 
 # include "./libft/libft.h"
 # include <stdio.h>
+# include <stdlib.h>
 
 void	ft_lst_split(t_list **stack_a, t_list **stack_b, int size);
 void	ft_write_lst(t_list **stack_a, int argc, char **argv, int i);

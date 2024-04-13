@@ -15,35 +15,35 @@
 void	ft_rrr_or_death(t_list **stack_a, t_list **stack_b, char *str)
 {
 	if (ft_strcmp(str, "rra\n"))
-		ft_rra(stack_a);
+		ft_rra_check(stack_a);
 	else if (ft_strcmp(str, "rrb\n"))
-		ft_rrb(stack_b);
+		ft_rrb_check(stack_b);
 	else if (ft_strcmp(str, "rrr\n"))
-		ft_rrr(stack_a, stack_b);
+		ft_rrr_check(stack_a, stack_b);
 	else
 		ft_display_error();
 }
 
 void	ft_exec_sort(t_list **stack_a, t_list **stack_b, char *str)
 {
-	while (str != NULL)
+	while (str)
 	{
 		if (ft_strcmp(str, "sa\n"))
-			ft_sa(stack_a);
+			ft_sa_check(stack_a);
 		else if (ft_strcmp(str, "sb\n"))
-			ft_sb(stack_b);
+			ft_sb_check(stack_b);
 		else if (ft_strcmp(str, "ss\n"))
-			ft_ss(stack_a, stack_b);
+			ft_ss_check(stack_a, stack_b);
 		else if (ft_strcmp(str, "pa\n"))
-			ft_pa(stack_b, stack_a);
+			ft_pa_check(stack_b, stack_a);
 		else if (ft_strcmp(str, "pb\n"))
-			ft_pb(stack_a, stack_b);
+			ft_pb_check(stack_a, stack_b);
 		else if (ft_strcmp(str, "ra\n"))
-			ft_ra(stack_a);
+			ft_ra_check(stack_a);
 		else if (ft_strcmp(str, "rb\n"))
-			ft_rb(stack_b);
+			ft_rb_check(stack_b);
 		else if (ft_strcmp(str, "rr\n"))
-			ft_rr(stack_a, stack_b);
+			ft_rr_check(stack_a, stack_b);
 		else
 			ft_rrr_or_death(stack_a, stack_b, str);
 		str = ft_get_next_line_gnl(0);
@@ -80,7 +80,7 @@ void	ft_check_argv_c(int argc, char **argv, t_list **stack_a)
 		while (arg[size] != NULL)
 			size++;
 		ft_check_write_lst(stack_a, size, arg, 0);
-		fr_free_arg(arg);
+		ft_free_arg(arg);
 	}
 	else if (argc >= 3)
 		ft_check_write_lst(stack_a, argc, argv, 1);

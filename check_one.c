@@ -22,6 +22,7 @@ void	ft_sa_check(t_list **stack_a)
 	*stack_a = tmp2;
 	tmp->next = tmp2->next;
 	tmp2->next = tmp;
+//	write(1, "sa\n", 3);
 	return ;
 }
 
@@ -35,6 +36,7 @@ void	ft_sb_check(t_list **stack_b)
 	*stack_b = tmp2;
 	tmp->next = tmp2->next;
 	tmp2->next = tmp;
+//	write(1, "sb\n", 3);
 	return ;
 }
 
@@ -55,6 +57,7 @@ void	ft_ss_check(t_list **stack_a, t_list **stack_b)
 	*stack_b = tmp2;
 	tmp->next = tmp2->next;
 	tmp2->next = tmp;
+//	write(1, "ss\n", 3);
 	return ;
 }
 
@@ -68,6 +71,7 @@ void	ft_pa_check(t_list **stack_b, t_list **stack_a)
 	*stack_b = (*stack_b)->next;
 	tmp->next = *stack_a;
 	*stack_a = tmp;
+//	write(1, "pa\n", 3);
 	return ;
 }
 
@@ -81,5 +85,6 @@ void	ft_pb_check(t_list **stack_a, t_list **stack_b)
 	*stack_a = (*stack_a)->next;
 	tmp->next = *stack_b;
 	*stack_b = tmp;
+//	write(1, "pb\n", 3);
 	return ;
 }

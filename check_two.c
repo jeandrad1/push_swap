@@ -26,6 +26,7 @@ void	ft_ra_check(t_list **stack_a)
 	*stack_a = first->next;
 	first->next = NULL;
 	last->next = first;
+//	write(1, "ra\n", 3);
 	return ;
 }
 
@@ -43,6 +44,7 @@ void	ft_rb_check(t_list **stack_b)
 	*stack_b = first->next;
 	first->next = NULL;
 	last->next = first;
+//	write(1, "rb\n", 3);
 	return ;
 }
 
@@ -69,5 +71,6 @@ void	ft_rr_check(t_list **stack_a, t_list **stack_b)
 	*stack_b = first->next;
 	first->next = NULL;
 	last->next = first;
+//	write(1, "rr\n", 3);
 	return ;
 }

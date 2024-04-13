@@ -27,6 +27,7 @@ void	ft_rra_check(t_list **stack_a)
 	last->next = *stack_a;
 	*stack_a = last;
 	tmp->next = NULL;
+//	write(1, "rra\n", 4);
 }
 
 void	ft_rrb_check(t_list **stack_b)
@@ -44,6 +45,7 @@ void	ft_rrb_check(t_list **stack_b)
 	last->next = *stack_b;
 	*stack_b = last;
 	tmp->next = NULL;
+//	write(1, "rrb\n", 4);
 }
 
 void	ft_rrr_check(t_list **stack_a, t_list **stack_b)
@@ -71,5 +73,6 @@ void	ft_rrr_check(t_list **stack_a, t_list **stack_b)
 	last->next = *stack_b;
 	*stack_b = last;
 	tmp->next = NULL;
+//	write(1, "rrr\n", 4);
 	return ;
 }
