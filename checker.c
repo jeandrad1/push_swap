@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:36:04 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/04/13 11:33:33 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/04/13 12:20:14 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,7 @@ void	ft_check_argv_c(int argc, char **argv, t_list **stack_a)
 		while (arg[size] != NULL)
 			size++;
 		ft_check_write_lst(stack_a, size, arg, 0);
-		//free sustituir for ft_free
-		free(arg);
+		fr_free_arg(arg);
 	}
 	else if (argc >= 3)
 		ft_check_write_lst(stack_a, argc, argv, 1);

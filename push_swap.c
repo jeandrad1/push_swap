@@ -64,7 +64,6 @@ void	ft_check_argv(int argc, char **argv, t_list **stack_a)
 			size++;
 		ft_write_lst(stack_a, size, arg, 0);
 		ft_free_arg(arg);
-		//free(arg);
 	}
 	else if (argc >= 3)
 		ft_write_lst(stack_a, argc, argv, 1);

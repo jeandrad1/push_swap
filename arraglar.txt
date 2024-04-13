@@ -1,4 +1,4 @@
 push_swap:
-	leaks en los casos de argumentos por string. Hacer ft_free y llamarla para liberar todo el split.
+	ARREGLADA. Seguir testeando
 checker:
 	la función que comprueba el orden no funciona / da KO cuando está ordenada la pila
