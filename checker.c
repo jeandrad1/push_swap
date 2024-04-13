@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:36:04 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/04/12 18:11:48 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/04/13 11:33:33 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 void	ft_rrr_or_death(t_list **stack_a, t_list **stack_b, char *str)
 {
 	if (ft_strcmp(str, "rra\n"))
-		ft_rra_check(stack_a);
+		ft_rra(stack_a);
 	else if (ft_strcmp(str, "rrb\n"))
-		ft_rrb_check(stack_b);
+		ft_rrb(stack_b);
 	else if (ft_strcmp(str, "rrr\n"))
-		ft_rrr_check(stack_a, stack_b);
+		ft_rrr(stack_a, stack_b);
 	else
 		ft_display_error();
 }
@@ -29,21 +29,21 @@ void	ft_exec_sort(t_list **stack_a, t_list **stack_b, char *str)
 	while (str != NULL)
 	{
 		if (ft_strcmp(str, "sa\n"))
-			ft_sa_check(stack_a);
+			ft_sa(stack_a);
 		else if (ft_strcmp(str, "sb\n"))
-			ft_sb_check(stack_b);
+			ft_sb(stack_b);
 		else if (ft_strcmp(str, "ss\n"))
-			ft_ss_check(stack_a, stack_b);
+			ft_ss(stack_a, stack_b);
 		else if (ft_strcmp(str, "pa\n"))
-			ft_pa_check(stack_b, stack_a);
+			ft_pa(stack_b, stack_a);
 		else if (ft_strcmp(str, "pb\n"))
-			ft_pb_check(stack_a, stack_b);
+			ft_pb(stack_a, stack_b);
 		else if (ft_strcmp(str, "ra\n"))
-			ft_ra_check(stack_a);
+			ft_ra(stack_a);
 		else if (ft_strcmp(str, "rb\n"))
-			ft_rb_check(stack_b);
+			ft_rb(stack_b);
 		else if (ft_strcmp(str, "rr\n"))
-			ft_rr_check(stack_a, stack_b);
+			ft_rr(stack_a, stack_b);
 		else
 			ft_rrr_or_death(stack_a, stack_b, str);
 		str = ft_get_next_line_gnl(0);
@@ -80,6 +80,7 @@ void	ft_check_argv_c(int argc, char **argv, t_list **stack_a)
 		while (arg[size] != NULL)
 			size++;
 		ft_check_write_lst(stack_a, size, arg, 0);
+		//free sustituir for ft_free
 		free(arg);
 	}
 	else if (argc >= 3)

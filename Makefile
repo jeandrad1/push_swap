@@ -4,11 +4,11 @@ BONUS_NAME	=	checker
 
 SRC			=	push_swap.c list_utils.c op_one.c op_two.c\
 				op_three.c order_functions.c order_two.c order_three.c\
-				format_check.c\
+				format_check.c ft_free_arg.c\
 				lis_algo.c sorter.c ft_display_error.c ft_lst_mod.c\
 
-BONUS_SRC	=	checker.c  check_write.c\
-				check_one.c check_two.c check_three.c\
+BONUS_SRC	=	checker.c  check_write.c \
+				op_one.c op_two.c op_three.c\
 				ft_display_error.c ft_lst_mod.c format_check.c\
 				
 LIBFT		=	libft/libft.a
@@ -20,7 +20,7 @@ CC			=	gcc
 
 RM			=	rm -f
 
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -g
 
 $(NAME):	$(OBJ)
 			@make -s -C ./libft

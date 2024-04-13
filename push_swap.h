@@ -23,6 +23,7 @@ void	ft_lst_order(t_list **stack_a);
 void	ft_lst_inverted(t_list **stack_a);
 void	ft_lst_delete(t_list **stack);
 void	ft_display_error(void);
+void	ft_free_arg(char **arg);
 
 void	ft_sa(t_list **stack_a);
 void	ft_sb(t_list **stack_b);
