@@ -7,7 +7,7 @@ SRC			=	push_swap.c list_utils.c op_one.c op_two.c\
 				format_check.c ft_free_arg.c\
 				lis_algo.c sorter.c ft_display_error.c ft_lst_mod.c\
 
-BONUS_SRC	=	checker.c  check_write.c \
+BONUS_SRC	=	checker.c  check_write.c list_utils.c op_one.c\
 				check_one.c check_two.c check_three.c ft_free_arg.c\
 				ft_display_error.c ft_lst_mod.c format_check.c\
 				

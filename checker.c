@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:36:04 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/04/13 12:20:14 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/04/15 19:24:58 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,11 @@ void	ft_exec_sort(t_list **stack_a, t_list **stack_b, char *str)
 
 void	ft_check_sort(t_list *stack_a)
 {
+	if (stack_a == NULL)
+	{
+		write(1, "KO\n", 3);
+		return ;
+	}
 	while (stack_a->next != NULL)
 	{
 		if (stack_a->content > (stack_a->next)->content)
@@ -103,5 +108,8 @@ int	main(int argc, char *argv[])
 	str = ft_get_next_line_gnl(0);
 	ft_exec_sort(&stack_a, &stack_b, str);
 	ft_check_sort(stack_a);
+	free(str);
+	ft_lst_delete(&stack_a);
+	ft_lst_delete(&stack_b);
 	return (0);
 }

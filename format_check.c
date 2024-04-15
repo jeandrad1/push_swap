@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 15:25:39 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/04/13 12:37:40 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:27:11 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_str_format_check(const char *str)
 			n++;
 		i++;
 	}
-	if (n > 1)
+	if (n >= 1)
 		return (0);
 	else
 	{

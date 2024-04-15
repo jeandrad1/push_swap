@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_one.c                                      :+:      :+:    :+:   */
+/*   check_one.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:09:45 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/04/10 16:10:04 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/04/15 18:56:10 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_sa_check(t_list **stack_a)
 	t_list	*tmp;
 	t_list	*tmp2;
 
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
+		return ;
 	tmp = *stack_a;
 	tmp2 = tmp->next;
 	*stack_a = tmp2;
@@ -31,6 +33,8 @@ void	ft_sb_check(t_list **stack_b)
 	t_list	*tmp;
 	t_list	*tmp2;
 
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
+		return ;
 	tmp = *stack_b;
 	tmp2 = tmp->next;
 	*stack_b = tmp2;
@@ -45,6 +49,8 @@ void	ft_ss_check(t_list **stack_a, t_list **stack_b)
 	t_list	*tmp;
 	t_list	*tmp2;
 
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
+		return ;
 	tmp = *stack_a;
 	tmp2 = tmp->next;
 	*stack_a = tmp2;
