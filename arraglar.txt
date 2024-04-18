@@ -1,4 +1,14 @@
 push_swap:
 	ARREGLADA. Seguir testeando
 checker:
+		jeandrad@c2r10s4 push_swap_working % ./checker "2 1 4 6"      
+	ra
+	pb
+	rra
+	OK
+jeandrad@c2r10s4 push_swap_working % ./checker_Mac "2 1 4 6" 
+	ra
+	pb
+	rra
+	KO
 		Arreglar leaks del get next line

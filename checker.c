@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:36:04 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/04/15 19:24:58 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/04/20 12:23:41 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,6 @@ int	main(int argc, char *argv[])
 	t_list	*stack_b;
 	char	*str;
 //	int		size;
-
 	stack_a = NULL;
 	stack_b = NULL;
 //	size = 0;
@@ -109,6 +108,7 @@ int	main(int argc, char *argv[])
 	ft_exec_sort(&stack_a, &stack_b, str);
 	ft_check_sort(stack_a);
 	free(str);
+	if (ft_stack_b_empty(&stack_b) == 0);
 	ft_lst_delete(&stack_a);
 	ft_lst_delete(&stack_b);
 	return (0);
