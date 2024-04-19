@@ -16,6 +16,8 @@
 # include "./libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>
+# include <stdbool.h>
+
 
 void	ft_lst_split(t_list **stack_a, t_list **stack_b, int size);
 void	ft_write_lst(t_list **stack_a, int argc, char **argv, int i);
@@ -72,6 +74,8 @@ t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+bool 	isTListEmpty(t_list* head);
+
 
 int		*ft_define_lis(int *dst, int size, int *max);
 int		*ft_long_lis(int *dst, int *arr, int size, int *ret);

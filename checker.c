@@ -107,6 +107,8 @@ int	main(int argc, char *argv[])
 		ft_check_argv_c(argc, argv, &stack_a);
 	str = ft_get_next_line_gnl(0);
 	ft_exec_sort(&stack_a, &stack_b, str);
+	if(!(isTListEmpty(&stack_b)))
+		ft_display_error();
 	ft_check_sort(stack_a);
 	free(str);
 	ft_lst_delete(&stack_a);
