@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:36:04 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/04/20 12:23:41 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/04/20 12:42:46 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,11 +106,13 @@ int	main(int argc, char *argv[])
 		ft_check_argv_c(argc, argv, &stack_a);
 	str = ft_get_next_line_gnl(0);
 	ft_exec_sort(&stack_a, &stack_b, str);
-	if(!(isTListEmpty(&stack_b)))
-		ft_display_error();
+	if ((ft_stack_b_empty(stack_b) == 1))
+	{
+		write(1, "KO\n", 3);
+		return (1);
+	}
 	ft_check_sort(stack_a);
 	free(str);
-	if (ft_stack_b_empty(&stack_b) == 0);
 	ft_lst_delete(&stack_a);
 	ft_lst_delete(&stack_b);
 	return (0);

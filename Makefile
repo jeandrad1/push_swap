@@ -10,13 +10,14 @@ SRC			=	push_swap.c list_utils.c op_one.c op_two.c\
 BONUS_SRC	=	checker.c  check_write.c list_utils.c op_one.c\
 				check_one.c check_two.c check_three.c ft_free_arg.c\
 				ft_display_error.c ft_lst_mod.c format_check.c\
+				ft_stack_b_empty.c\
 				
 LIBFT		=	libft/libft.a
 
 OBJ			=	$(SRC:.c=.o)
 BONUS_OBJ	=	$(BONUS_SRC:.c=.o) 
 
-CC			=	|gcc
+CC			=	gcc
 
 RM			=	rm -f
 

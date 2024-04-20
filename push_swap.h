@@ -74,8 +74,7 @@ t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-bool 	isTListEmpty(t_list* head);
-
+bool	ft_stack_b_empty(t_list *stack_b);
 
 int		*ft_define_lis(int *dst, int size, int *max);
 int		*ft_long_lis(int *dst, int *arr, int size, int *ret);
