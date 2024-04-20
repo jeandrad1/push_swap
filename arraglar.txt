@@ -1,6 +1,8 @@
 push_swap:
 	ARREGLADA. Seguir testeando
 checker:
+
+	Usar lst_size para checker aque el stack_b esta vacio.
 	Leaks
 
 	==97569== HEAP SUMMARY:
