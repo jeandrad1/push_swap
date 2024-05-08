@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:37:22 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/04/13 11:29:47 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/08 18:56:35 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,43 +22,6 @@ static void	ft_lstcheck_c(t_list *stack_a, int check)
 	}
 	return ;
 }
-/*
-static void	ft_lst_order_c(t_list **stack_a)
-{
-	t_list	*tmp;
-	t_list	*tmp2;
-
-	tmp = *stack_a;
-	tmp2 = tmp->next;
-	while (tmp2 != NULL)
-	{
-		if (tmp->content > tmp2->content)
-			return ;
-		tmp = tmp->next;
-		tmp2 = tmp2->next;
-	}
-	exit(0);
-}
-*/
-/*
-void	ft_check_lst_inverted(t_list **stack_a)
-{
-	t_list	*tmp;
-	t_list	*tmp2;
-
-	tmp = *stack_a;
-	tmp2 = tmp->next;
-	while (tmp2 != NULL)
-	{
-		if (tmp->content < tmp2->content)
-			return ;
-		tmp = tmp->next;
-		tmp2 = tmp2->next;
-	}
-	ft_sa_check(stack_a);
-	return ;
-}
-*/
 
 void	ft_check_write_lst(t_list **stack_a, int argc, char **argv, int i)
 {
@@ -72,7 +35,5 @@ void	ft_check_write_lst(t_list **stack_a, int argc, char **argv, int i)
 		ft_lstcheck_c(*stack_a, tmp->content);
 		i++;
 	}
-//	ft_lst_order_c(stack_a);
-//	ft_check_lst_inverted(stack_a);
 	tmp = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:13:21 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/04/12 16:28:51 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/08 18:56:11 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_ra_check(t_list **stack_a)
 	*stack_a = first->next;
 	first->next = NULL;
 	last->next = first;
-//	write(1, "ra\n", 3);
 	return ;
 }
 
@@ -44,7 +43,6 @@ void	ft_rb_check(t_list **stack_b)
 	*stack_b = first->next;
 	first->next = NULL;
 	last->next = first;
-//	write(1, "rb\n", 3);
 	return ;
 }
 
@@ -71,6 +69,5 @@ void	ft_rr_check(t_list **stack_a, t_list **stack_b)
 	*stack_b = first->next;
 	first->next = NULL;
 	last->next = first;
-//	write(1, "rr\n", 3);
 	return ;
 }
