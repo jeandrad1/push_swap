@@ -44,9 +44,9 @@ void	ft_sort_three(t_list **stack_a);
 void	ft_sort_five(t_list **stack_a, t_list **stack_b);
 
 void	ft_check_argv(int argc, char **argv, t_list **stack_a);
-int	ft_check_format(int argc, char **argv);
-int	ft_str_format_check(const char *str);
-int	ft_atoi_mod(const char *str);
+int		ft_check_format(int argc, char **argv);
+int		ft_str_format_check(const char *str);
+int		ft_atoi_mod(const char *str);
 
 
 void	ft_move_to_b(t_list **stack_a, t_list **stack_b, int *arr, int max);
@@ -98,6 +98,6 @@ void	ft_rr_check(t_list **stack_a, t_list **stack_b);
 void	ft_rra_check(t_list **stack_a);
 void	ft_rrb_check(t_list **stack_b);
 void	ft_rrr_check(t_list **stack_a, t_list **stack_b);
-int	ft_strcmp(char *s1, char *s2);
+int		ft_strcmp(char *s1, char *s2);
 
 #endif
