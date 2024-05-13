@@ -81,7 +81,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	else
-		ft_check_argv(argc, argv, &stack_a);	
+		ft_check_argv(argc, argv, &stack_a);
 	size = ft_lstsize(stack_a);
 	if (size == 2)
 		return (0);

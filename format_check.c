@@ -37,7 +37,6 @@ int	ft_str_format_check(const char *str)
 		ft_display_error();
 		return (1);
 	}
-
 }
 
 int	ft_atoi_mod(const char *str)
@@ -49,7 +48,6 @@ int	ft_atoi_mod(const char *str)
 	i = 0;
 	sign = 1;
 	n = 0;
-
 	if (str[i] == 45 || (str[i] == 43 && ft_isdigit(str[i + 1])))
 	{
 		if (str[i] == 45)
