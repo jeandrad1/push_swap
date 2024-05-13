@@ -96,6 +96,7 @@ int	main(int argc, char *argv[])
 	t_list	*stack_a;
 	t_list	*stack_b;
 	char	*str;
+
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc < 2)
