@@ -21,7 +21,7 @@ CC			=	gcc
 
 RM			=	rm -f
 
-CFLAGS		=	-Wall -Wextra -Werror -g
+CFLAGS		=	-Wall -Wextra -Werror -g -fsanitize=address
 
 $(NAME):	$(OBJ)
 			@make -s -C ./libft
