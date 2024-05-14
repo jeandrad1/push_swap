@@ -8,8 +8,7 @@ a.out
 checker_Mac
 push_swap
 push_swap_test.sh
-.txt
-0
+.push_swap_test_linux0
 checker_linux
 push_swap_test_linux.sh
 checker

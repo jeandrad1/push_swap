@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 10:22:55 by jeandrad          #+#    #+#             */
-/*   Updated: 2023/12/16 11:47:43 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/14 18:17:00 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	len = ft_strlen(s1) +ft_strlen(s2);
 	str = (char *)malloc (sizeof(*str) *(len + 1));
-	if (!str)
+	if (!str || ft_strlen(str) < len + 1)
+	{
+		free(str);
 		return (NULL);
+	}
 	ft_strlcpy(str, s1, ft_strlen(s1)+1);
 	ft_strcat(str, s2);
 	return (str);
