@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 10:23:47 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/03/30 10:39:44 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/14 19:56:40 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,5 @@ void	ft_write_lst(t_list **stack_a, int argc, char **argv, int i)
 	}
 	ft_lst_order(stack_a);
 	ft_lst_inverted(stack_a);
-	tmp = NULL;
+	free(tmp);
 }

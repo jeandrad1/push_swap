@@ -63,6 +63,7 @@ void	ft_check_argv(int argc, char **argv, t_list **stack_a)
 		while (arg[size] != NULL)
 			size++;
 		ft_write_lst(stack_a, size, arg, 0);
+		printf("arg: %p\n",arg);
 		ft_free_arg(arg);
 	}
 	else if (argc >= 3)
@@ -83,8 +84,13 @@ int	main(int argc, char **argv)
 	else
 		ft_check_argv(argc, argv, &stack_a);
 	size = ft_lstsize(stack_a);
+	printf("%p\n",stack_a);
+	printf("%i\n",size);
 	if (size == 2)
-		return (0);
+		{
+			free(stack_a);
+			return (0);
+		}
 	ft_lst_split(&stack_a, &stack_b, size);
 	ft_lst_delete(&stack_a);
 	ft_lst_delete(&stack_b);
