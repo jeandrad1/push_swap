@@ -88,7 +88,7 @@ int	main(int argc, char **argv)
 	printf("%i\n",size);
 	if (size == 2)
 		{
-			free(stack_a);
+			ft_lst_delete(&stack_a);
 			return (0);
 		}
 	ft_lst_split(&stack_a, &stack_b, size);

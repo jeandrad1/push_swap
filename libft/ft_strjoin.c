@@ -38,11 +38,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!str || ft_strlen(str) < len + 1)
 	{
 		free(str);
-	if (!str || ft_strlen(str) < len + 1)
-	{
-		free(str);
 		return (NULL);
-	}
 	}
 	ft_strlcpy(str, s1, ft_strlen(s1)+1);
 	ft_strcat(str, s2);
