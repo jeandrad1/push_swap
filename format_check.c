@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 15:25:39 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/04/15 16:27:11 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/16 17:00:42 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,30 +41,30 @@ int	ft_str_format_check(const char *str)
 
 int	ft_atoi_mod(const char *str)
 {
-    int		i;
-    int		sign;
-    long	n;
+	int		i;
+	int		sign;
+	long	n;
 
-    i = 0;
-    sign = 1;
-    n = 0;
-    if (str[i] == '-' || (str[i] == '+' && ft_isdigit(str[i + 1])))
-    {
-        if (str[i] == '-')
-            sign = -1;
-        i++;
-    }
-    while (ft_isdigit(str[i]))
-    {
-        n = n * 10 + (str[i] - '0');
-        i++;
-    }
-    if (str[i] != '\0')
-        ft_display_error();
-    n *= sign;
-    if (n > INT_MAX || n < INT_MIN)
-        ft_display_error();
-    return ((int) n);
+	i = 0;
+	sign = 1;
+	n = 0;
+	if (str[i] == '-' || (str[i] == '+' && ft_isdigit(str[i + 1])))
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (ft_isdigit(str[i]))
+	{
+		n = n * 10 + (str[i] - '0');
+		i++;
+	}
+	if (str[i] != '\0')
+		ft_display_error();
+	n *= sign;
+	if (n > INT_MAX || n < INT_MIN)
+		ft_display_error();
+	return ((int) n);
 }
 
 int	ft_strcmp(char *s1, char *s2)
