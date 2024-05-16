@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 15:25:39 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/04/15 16:27:11 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/16 17:27:31 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,20 @@ int	ft_str_format_check(const char *str)
 	}
 }
 
+int	ft_check_sign_and_move_pointer(const char *str, int *i)
+{
+	int	sign;
+
+	sign = 1;
+	if (str[*i] == 45 || (str[*i] == 43 && ft_isdigit(str[*i + 1])))
+	{
+		if (str[*i] == 45)
+			sign = -1;
+		(*i)++;
+	}
+	return (sign);
+}
+
 int	ft_atoi_mod(const char *str)
 {
 	int		i;
@@ -46,14 +60,8 @@ int	ft_atoi_mod(const char *str)
 	long	n;
 
 	i = 0;
-	sign = 1;
 	n = 0;
-	if (str[i] == 45 || (str[i] == 43 && ft_isdigit(str[i + 1])))
-	{
-		if (str[i] == 45)
-			sign = -1;
-		i++;
-	}
+	sign = ft_check_sign_and_move_pointer(str, &i);
 	while (str[i] >= 48 && str[i] <= 57)
 	{
 		if (!(ft_isdigit(str[i]) && str[i] != 32) || ft_isalpha(str[i]))
