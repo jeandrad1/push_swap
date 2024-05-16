@@ -50,32 +50,24 @@ void	ft_rrb_check(t_list **stack_b)
 	tmp->next = NULL;
 }
 
+void	ft_rotate_reverse(t_list **stack)
+{
+    if (*stack == NULL || (*stack)->next == NULL)
+        return ;
+    t_list	*last = *stack;
+    t_list	*tmp = *stack;
+    while (last->next != NULL)
+    {
+        tmp = last;
+        last = last->next;
+    }
+    last->next = *stack;
+    *stack = last;
+    tmp->next = NULL;
+}
+
 void	ft_rrr_check(t_list **stack_a, t_list **stack_b)
 {
-	t_list	*last;
-	t_list	*tmp;
-
-	if (*stack_a == NULL || (*stack_a)->next == NULL)
-		return ;
-	last = *stack_a;
-	tmp = *stack_a;
-	while (last->next != NULL)
-	{
-		tmp = last;
-		last = last->next;
-	}
-	last->next = *stack_a;
-	*stack_a = last;
-	tmp->next = NULL;
-	last = *stack_b;
-	tmp = *stack_b;
-	while (last->next != NULL)
-	{
-		tmp = last;
-		last = last->next;
-	}
-	last->next = *stack_b;
-	*stack_b = last;
-	tmp->next = NULL;
-	return ;
+    ft_rotate_reverse(stack_a);
+    ft_rotate_reverse(stack_b);
 }
