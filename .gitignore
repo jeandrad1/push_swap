@@ -1,0 +1,16 @@
+.DS_Store
+a.out
+*.exe
+.vscode/settings.json
+*.o
+*.out
+*.a
+checker_Mac
+push_swap
+push_swap_test.sh
+.txt
+0
+checker_linux
+push_swap_test_linux.sh
+checker
+push_swap
