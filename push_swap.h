@@ -17,7 +17,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdbool.h>
-# include <limits.h>
 
 void	ft_lst_split(t_list **stack_a, t_list **stack_b, int size);
 void	ft_write_lst(t_list **stack_a, int argc, char **argv, int i);
@@ -26,7 +25,8 @@ void	ft_lst_order(t_list **stack_a);
 void	ft_lst_inverted(t_list **stack_a);
 void	ft_lst_delete(t_list **stack);
 void	ft_display_error(void);
-void	*ft_free_arg(char **arg);
+void	ft_free_arg(char **arg);
+void	ft_free_str(char *str);
 
 void	ft_sa(t_list **stack_a);
 void	ft_sb(t_list **stack_b);
