@@ -46,6 +46,7 @@ void	ft_exec_sort(t_list **stack_a, t_list **stack_b, char *str)
 			ft_rr_check(stack_a, stack_b);
 		else
 			ft_rrr_or_death(stack_a, stack_b, str);
+		free(str);
 		str = ft_get_next_line_gnl(0);
 	}
 }
@@ -111,8 +112,8 @@ int	main(int argc, char *argv[])
 		return (1);
 	}
 	ft_check_sort(stack_a);
-	free(str);
 	ft_lst_delete(&stack_a);
 	ft_lst_delete(&stack_b);
+	free(str);
 	return (0);
 }
