@@ -16,7 +16,7 @@ LIBFT		=	libft/libft.a
 OBJ			=	$(SRC:.c=.o)
 BONUS_OBJ	=	$(BONUS_SRC:.c=.o) 
 
-CC			=	gcc
+CC			=	clang
 
 RM			=	rm -f
 
