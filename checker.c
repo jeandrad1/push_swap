@@ -21,7 +21,10 @@ void	ft_rrr_or_death(t_list **stack_a, t_list **stack_b, char *str)
 	else if (ft_strcmp(str, "rrr\n"))
 		ft_rrr_check(stack_a, stack_b);
 	else
+	{
+		free(str);
 		ft_display_error();
+	}
 }
 
 void	ft_exec_sort(t_list **stack_a, t_list **stack_b, char *str)
