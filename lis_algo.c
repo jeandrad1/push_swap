@@ -19,6 +19,7 @@ int	*ft_lis_util_helper(int max)
 	val = (int *) malloc (sizeof(int) * (max + 1));
 	if (!val)
 		ft_display_error();
+	ft_memset(val, 0, sizeof(int) * max + 1);
 	val[max - 1] = 2147483647;
 	return (val);
 }
