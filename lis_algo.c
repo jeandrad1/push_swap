@@ -17,7 +17,7 @@ int	*ft_lis_util_helper(int max)
 	int	*val;
 
 	val = (int *) malloc (sizeof(int) * (max + 1));
-	if (!val)
+	if (!val || max <= 0)
 		ft_display_error();
 	ft_memset(val, 0, sizeof(int) * max + 1);
 	val[max - 1] = 2147483647;
@@ -32,6 +32,8 @@ int	*ft_lis_util(int *dst, int *arr, int max, int size)
 	int	x;
 
 	j = size;
+	if (max <= 1 || max > size)
+		return (NULL);
 	val = ft_lis_util_helper(max - 1);
 	while (max-- >= 1)
 	{
