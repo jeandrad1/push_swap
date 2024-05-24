@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:36:04 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/05/08 18:55:37 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/18 18:40:34 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ void	ft_rrr_or_death(t_list **stack_a, t_list **stack_b, char *str)
 	else if (ft_strcmp(str, "rrr\n"))
 		ft_rrr_check(stack_a, stack_b);
 	else
-	{
-		free(str);
 		ft_display_error();
-	}
 }
 
 void	ft_exec_sort(t_list **stack_a, t_list **stack_b, char *str)
@@ -109,14 +106,15 @@ int	main(int argc, char *argv[])
 		ft_check_argv_c(argc, argv, &stack_a);
 	str = ft_get_next_line_gnl(0);
 	ft_exec_sort(&stack_a, &stack_b, str);
+	free(str);
 	if (ft_lstsize(stack_b) != 0)
 	{
 		write(1, "KO\n", 3);
 		return (1);
 	}
 	ft_check_sort(stack_a);
+//	free(str);
 	ft_lst_delete(&stack_a);
 	ft_lst_delete(&stack_b);
-	free(str);
 	return (0);
 }

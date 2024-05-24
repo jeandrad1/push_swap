@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 23:07:30 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/05/16 17:03:14 by jeandrad         ###   ########.fr       */
+/*   Updated: 2023/12/22 11:40:20 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,9 @@ static char	**ft_split_core(char const *s, char c, char **st)
 		{
 			st[j] = dup_word(s, count, i);
 			if (!st[j])
+			{
 				return (ft_free(st, j));
+			}
 			count = -1;
 			j++;
 		}

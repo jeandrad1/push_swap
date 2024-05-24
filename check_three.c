@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:35:02 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/05/16 17:02:29 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/16 17:24:01 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,15 @@ void	ft_rrb_check(t_list **stack_b)
 	tmp->next = NULL;
 }
 
-void	ft_rotate_reverse(t_list **stack)
+void	ft_rotate_stack(t_list **stack)
 {
 	t_list	*last;
 	t_list	*tmp;
 
-	last = *stack;
-	tmp = *stack;
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
+	last = *stack;
+	tmp = *stack;
 	while (last->next != NULL)
 	{
 		tmp = last;
@@ -71,6 +71,6 @@ void	ft_rotate_reverse(t_list **stack)
 
 void	ft_rrr_check(t_list **stack_a, t_list **stack_b)
 {
-	ft_rotate_reverse(stack_a);
-	ft_rotate_reverse(stack_b);
+	ft_rotate_stack(stack_a);
+	ft_rotate_stack(stack_b);
 }
