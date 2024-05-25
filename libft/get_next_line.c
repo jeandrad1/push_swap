@@ -40,6 +40,7 @@ char	*ft_read_line_gnl(int fd, char *dst)
 	char	buf;
 
 	len = 1;
+	buf = 0;
 	while (len != 0 && buf != '\n')
 	{
 		len = read(fd, &buf, 1);

@@ -106,14 +106,12 @@ int	main(int argc, char *argv[])
 		ft_check_argv_c(argc, argv, &stack_a);
 	str = ft_get_next_line_gnl(0);
 	ft_exec_sort(&stack_a, &stack_b, str);
-	free(str);
 	if (ft_lstsize(stack_b) != 0)
 	{
 		write(1, "KO\n", 3);
 		return (1);
 	}
 	ft_check_sort(stack_a);
-//	free(str);
 	ft_lst_delete(&stack_a);
 	ft_lst_delete(&stack_b);
 	return (0);
