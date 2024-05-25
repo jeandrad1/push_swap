@@ -51,19 +51,23 @@ void	ft_exec_sort(t_list **stack_a, t_list **stack_b, char *str)
 	}
 }
 
-void	ft_check_sort(t_list *stack_a)
+void	ft_check_sort(t_list *stack_a, t_list *stack_b)
 {
 	if (stack_a == NULL)
 	{
+		ft_lst_delete(&stack_a);
+		ft_lst_delete(&stack_b);
 		write(1, "KO\n", 3);
-		return ;
+		exit (1);
 	}
 	while (stack_a->next != NULL)
 	{
 		if (stack_a->content > (stack_a->next)->content)
 		{
+			ft_lst_delete(&stack_a);
+			ft_lst_delete(&stack_b);
 			write(1, "KO\n", 3);
-			return ;
+			exit (1);
 		}
 		stack_a = stack_a->next;
 	}
@@ -111,7 +115,7 @@ int	main(int argc, char *argv[])
 		write(1, "KO\n", 3);
 		return (1);
 	}
-	ft_check_sort(stack_a);
+	ft_check_sort(stack_a,stack_b);
 	ft_lst_delete(&stack_a);
 	ft_lst_delete(&stack_b);
 	return (0);
