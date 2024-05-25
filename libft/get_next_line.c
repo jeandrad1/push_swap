@@ -34,6 +34,7 @@ char	*ft_strjoin_gnl(char *s, char c)
 	return (new);
 }
 
+
 char	*ft_read_line_gnl(int fd, char *dst)
 {
 	int		len;
@@ -49,9 +50,15 @@ char	*ft_read_line_gnl(int fd, char *dst)
 		dst = ft_strjoin_gnl(dst, buf);
 	}
 	if (dst[0] == '\n')
+	{
+		free(dst);
 		return ("\n");
+	}
 	if (!dst[1])
+	{
+		free(dst);
 		return (NULL);
+	}
 	return (dst);
 }
 
