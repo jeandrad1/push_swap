@@ -117,7 +117,7 @@ int	main(int argc, char *argv[])
 		ft_lst_delete(&stack_b);
 		exit (1);
 	}
-	ft_check_sort(stack_a,stack_b);
+	ft_check_sort(stack_a, stack_b);
 	ft_lst_delete(&stack_a);
 	ft_lst_delete(&stack_b);
 	return (0);

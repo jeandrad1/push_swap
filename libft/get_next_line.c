@@ -34,7 +34,6 @@ char	*ft_strjoin_gnl(char *s, char c)
 	return (new);
 }
 
-
 char	*ft_read_line_gnl(int fd, char *dst)
 {
 	int		len;
