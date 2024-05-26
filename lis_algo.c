@@ -24,6 +24,7 @@ int	*ft_lis_util_helper(int max)
 	return (val);
 }
 
+/*
 int	*ft_lis_util(int *dst, int *arr, int max, int size)
 {
 	int	i;
@@ -53,6 +54,45 @@ int	*ft_lis_util(int *dst, int *arr, int max, int size)
 	}
 	free(arr);
 	return (val);
+}
+*/
+
+int	process_inner_loop(int *dst, int *arr, int *val, int max, int j)
+{
+    int	i;
+    int	x;
+
+    i = j;
+    x = 0;
+    while (--i >= 0)
+    {
+        if (arr[i] == max && ((dst[i] < val[max])
+                || val[max - 1] == 2147483647)
+            && ((dst[i] > val[max - 1]) || (x == 0)))
+        {
+            val[max - 1] = dst[i];
+            j = i;
+            x = 1;
+        }
+    }
+    return (j);
+}
+
+int	*ft_lis_util(int *dst, int *arr, int max, int size)
+{
+    int	j;
+    int	*val;
+
+    j = size;
+    if (max <= 1 || max > size)
+        return (NULL);
+    val = ft_lis_util_helper(max - 1);
+    while (max-- >= 1)
+    {
+        j = process_inner_loop(dst, arr, val, max, j);
+    }
+    free(arr);
+    return (val);
 }
 
 int	*ft_define_lis(int *dst, int size, int *max)
