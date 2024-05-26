@@ -113,7 +113,9 @@ int	main(int argc, char *argv[])
 	if (ft_lstsize(stack_b) != 0)
 	{
 		write(1, "KO\n", 3);
-		return (1);
+		ft_lst_delete(&stack_a);
+		ft_lst_delete(&stack_b);
+		exit (1);
 	}
 	ft_check_sort(stack_a,stack_b);
 	ft_lst_delete(&stack_a);
