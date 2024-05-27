@@ -57,39 +57,43 @@ int	*ft_lis_util(int *dst, int *arr, int max, int size)
 }
 */
 
-int	process_inner_loop(int *dst, int *arr, int *val, int max, int j)
+int	process_inner_loop(int **dst_arr, int *val, int max_j[2])
 {
 	int	i;
 	int	x;
 
-	i = j;
+	i = max_j[1];
 	x = 0;
 	while (--i >= 0)
 	{
-		if (arr[i] == max && ((dst[i] < val[max])
-				|| val[max - 1] == 2147483647)
-			&& ((dst[i] > val[max - 1]) || (x == 0)))
+		if (dst_arr[1][i] == max_j[0] && ((dst_arr[0][i] < val[max_j[0]])
+				|| val[max_j[0] - 1] == 2147483647)
+			&& ((dst_arr[0][i] > val[max_j[0] - 1]) || (x == 0)))
 		{
-			val[max - 1] = dst[i];
-			j = i;
+			val[max_j[0] - 1] = dst_arr[0][i];
+			max_j[1] = i;
 			x = 1;
 		}
 	}
-	return (j);
+	return (max_j[1]);
 }
 
 int	*ft_lis_util(int *dst, int *arr, int max, int size)
 {
-	int	j;
 	int	*val;
+	int	*dst_arr[2];
+	int	max_j[2];
 
-	j = size;
+	dst_arr[0] = dst;
+	dst_arr[1] = arr;
+	max_j[0] = max;
+	max_j[1] = size;
 	if (max <= 1 || max > size)
 		return (NULL);
 	val = ft_lis_util_helper(max - 1);
-	while (max-- >= 1)
+	while (max_j[0]-- >= 1)
 	{
-		j = process_inner_loop(dst, arr, val, max, j);
+		max_j[1] = process_inner_loop(dst_arr, val, max_j);
 	}
 	free(arr);
 	return (val);

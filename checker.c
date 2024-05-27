@@ -12,6 +12,9 @@
 
 #include "push_swap.h"
 
+//Continuation of the movements function ft_exec_sort.
+//It does some movements or displays an error and exits the program
+
 void	ft_rrr_or_death(t_list **stack_a, t_list **stack_b, char *str)
 {
 	if (ft_strcmp(str, "rra\n"))

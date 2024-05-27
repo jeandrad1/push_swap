@@ -22,10 +22,7 @@ int	ft_str_format_check(const char *str)
 	while (str[i])
 	{
 		if ((!ft_isdigit(str[i]) && str[i] != 32) || ft_isalpha(str[i]))
-		{
 			ft_display_error();
-			return (1);
-		}
 		if (ft_isdigit(str[i]))
 			n++;
 		i++;
@@ -33,10 +30,7 @@ int	ft_str_format_check(const char *str)
 	if (n >= 1)
 		return (0);
 	else
-	{
 		ft_display_error();
-		return (1);
-	}
 }
 
 int	ft_check_sign_and_move_pointer(const char *str, int *i)
