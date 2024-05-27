@@ -53,6 +53,9 @@ void	ft_exec_sort(t_list **stack_a, t_list **stack_b, char *str)
 
 void	ft_check_sort(t_list *stack_a, t_list *stack_b)
 {
+	t_list	*original_stack_a;
+
+	original_stack_a = stack_a;
 	if (stack_a == NULL)
 	{
 		ft_lst_delete(&stack_a);
@@ -64,7 +67,7 @@ void	ft_check_sort(t_list *stack_a, t_list *stack_b)
 	{
 		if (stack_a->content > (stack_a->next)->content)
 		{
-			ft_lst_delete(&stack_a);
+			ft_lst_delete(&original_stack_a);
 			ft_lst_delete(&stack_b);
 			write(1, "KO\n", 3);
 			exit (1);
