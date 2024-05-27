@@ -31,6 +31,7 @@ int	ft_str_format_check(const char *str)
 		return (0);
 	else
 		ft_display_error();
+	return (1);
 }
 
 int	ft_check_sign_and_move_pointer(const char *str, int *i)
