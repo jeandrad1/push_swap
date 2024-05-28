@@ -12,6 +12,10 @@
 
 #include "push_swap.h"
 
+//Continuation of the movements function ft_exec_sort.
+//It executes the movement rra.
+//It rotates the stack a down.
+
 void	ft_rra_check(t_list **stack_a)
 {
 	t_list	*last;
@@ -30,6 +34,10 @@ void	ft_rra_check(t_list **stack_a)
 	*stack_a = last;
 	tmp->next = NULL;
 }
+
+//Continuation of the movements function ft_exec_sort.
+//It executes the movement rrb.
+//It rotates the stack b down.
 
 void	ft_rrb_check(t_list **stack_b)
 {
@@ -50,6 +58,11 @@ void	ft_rrb_check(t_list **stack_b)
 	tmp->next = NULL;
 }
 
+//Continuation of the movements function ft_exec_sort.
+//It almost executes the movement rrr.
+//It rotates the stack a and stack b down.
+//Is used in the function below
+
 void	ft_rotate_stack(t_list **stack)
 {
 	t_list	*last;
@@ -68,6 +81,10 @@ void	ft_rotate_stack(t_list **stack)
 	*stack = last;
 	tmp->next = NULL;
 }
+
+//Continuation of the movements function ft_exec_sort.
+//It really executes the movement rrr.
+//It rotates the stack a and stack b down.
 
 void	ft_rrr_check(t_list **stack_a, t_list **stack_b)
 {

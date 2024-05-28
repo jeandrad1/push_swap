@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+//It checks if the list is empty or if the list has only one element.
+
 static void	ft_lstcheck_c(t_list *stack_a, int check)
 {
 	while (stack_a->next != NULL)
@@ -22,6 +24,8 @@ static void	ft_lstcheck_c(t_list *stack_a, int check)
 	}
 	return ;
 }
+
+//It writes the list with the values of the arguments.
 
 void	ft_check_write_lst(t_list **stack_a, int argc, char **argv, int i)
 {
