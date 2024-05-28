@@ -24,39 +24,6 @@ int	*ft_lis_util_helper(int max)
 	return (val);
 }
 
-/*
-int	*ft_lis_util(int *dst, int *arr, int max, int size)
-{
-	int	i;
-	int	j;
-	int	*val;
-	int	x;
-
-	j = size;
-	if (max <= 1 || max > size)
-		return (NULL);
-	val = ft_lis_util_helper(max - 1);
-	while (max-- >= 1)
-	{
-		i = j;
-		x = 0;
-		while (--i >= 0)
-		{
-			if (arr[i] == max && ((dst[i] < val[max])
-					|| val[max - 1] == 2147483647)
-				&& ((dst[i] > val[max - 1]) || (x == 0)))
-			{
-				val[max - 1] = dst[i];
-				j = i;
-				x = 1;
-			}
-		}
-	}
-	free(arr);
-	return (val);
-}
-*/
-
 int	process_inner_loop(int **dst_arr, int *val, int max_j[2])
 {
 	int	i;

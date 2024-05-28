@@ -27,6 +27,9 @@ void	ft_rrr_or_death(t_list **stack_a, t_list **stack_b, char *str)
 		ft_display_error();
 }
 
+//This function executes the movements of the checker program
+//It continues in a loop until ctrl + D is pressed
+
 void	ft_exec_sort(t_list **stack_a, t_list **stack_b, char *str)
 {
 	while (str)
@@ -53,6 +56,9 @@ void	ft_exec_sort(t_list **stack_a, t_list **stack_b, char *str)
 		str = ft_get_next_line_gnl(0);
 	}
 }
+
+//This function checks if the stack a is sorted and stack b is empty
+//It ends the program with a KO or OK message
 
 void	ft_check_sort(t_list *stack_a, t_list *stack_b)
 {
@@ -81,6 +87,9 @@ void	ft_check_sort(t_list *stack_a, t_list *stack_b)
 	return ;
 }
 
+//This function checks the arguments passed to the program
+//It checks if the arguments are numbers and if they are in the correct format
+
 void	ft_check_argv_c(int argc, char **argv, t_list **stack_a)
 {
 	int		size;
@@ -101,6 +110,9 @@ void	ft_check_argv_c(int argc, char **argv, t_list **stack_a)
 	else if (argc >= 3)
 		ft_check_write_lst(stack_a, argc, argv, 1);
 }
+
+//Main function of the checker program
+//It checks the arguments, executes the movements and checks if the stack is sorted
 
 int	main(int argc, char *argv[])
 {
