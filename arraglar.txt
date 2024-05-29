@@ -1,43 +1,6 @@
 push_swap:
-	ARREGLADA. Seguir testeando
+	1 leak.
+	arreglar lis algo para norma 
+
 checker:
-
-	Usar lst_size para checker aque el stack_b esta vacio.
-	Leaks
-
-	==97569== HEAP SUMMARY:
-==97569==     in use at exit: 14,107 bytes in 169 blocks
-==97569==   total heap usage: 199 allocs, 30 frees, 18,922 bytes allocated
-==97569== 
-==97569== 4 bytes in 1 blocks are definitely lost in loss record 1 of 40
-==97569==    at 0x100124505: malloc (in /Users/jeandrad/.brew/Cellar/valgrind/HEAD-d14be1d/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==97569==    by 0x100003D19: ft_strjoin_gnl (in ./checker)
-==97569==    by 0x100003E29: ft_read_line_gnl (in ./checker)
-==97569==    by 0x100003EDA: ft_get_next_line_gnl (in ./checker)
-==97569==    by 0x100002512: main (checker.c:107)
-==97569== 
-==97569== 11 bytes in 3 blocks are definitely lost in loss record 2 of 40
-==97569==    at 0x100124505: malloc (in /Users/jeandrad/.brew/Cellar/valgrind/HEAD-d14be1d/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==97569==    by 0x100003D19: ft_strjoin_gnl (in ./checker)
-==97569==    by 0x100003E29: ft_read_line_gnl (in ./checker)
-==97569==    by 0x100003EDA: ft_get_next_line_gnl (in ./checker)
-==97569==    by 0x100002321: ft_exec_sort (checker.c:49)
-==97569==    by 0x100002527: main (checker.c:108)
-==97569== 
-==97569== 64 (32 direct, 32 indirect) bytes in 2 blocks are definitely lost in loss record 22 of 40
-==97569==    at 0x100124505: malloc (in /Users/jeandrad/.brew/Cellar/valgrind/HEAD-d14be1d/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
-==97569==    by 0x1000032F4: ft_lstnew (ft_lst_mod.c:19)
-==97569==    by 0x1000025E1: ft_check_write_lst (check_write.c:70)
-==97569==    by 0x10000247F: ft_check_argv_c (checker.c:87)
-==97569==    by 0x10000250B: main (checker.c:106)
-==97569== 
-==97569== LEAK SUMMARY:
-==97569==    definitely lost: 47 bytes in 6 blocks
-==97569==    indirectly lost: 32 bytes in 2 blocks
-==97569==      possibly lost: 0 bytes in 0 blocks
-==97569==    still reachable: 0 bytes in 0 blocks
-==97569==         suppressed: 14,028 bytes in 161 blocks
-==97569== 
-==97569== Use --track-origins=yes to see where uninitialised values come from
-==97569== For lists of detected and suppressed errors, rerun with: -s
-==97569== ERROR SUMMARY: 8 errors from 6 contexts (suppressed: 7 from 7)
+	OK
