@@ -24,7 +24,7 @@ int	*ft_lis_util_helper(int max)
 	return (val);
 }
 
-int	process_inner_loop(int **dst_arr, int *val, int max_j[2])
+static int	process_inner_loop(int **dst_arr, int *val, int max_j[2])
 {
 	int	i;
 	int	x;
@@ -66,17 +66,13 @@ int	*ft_lis_util(int *dst, int *arr, int max, int size)
 	return (val);
 }
 
-int	*ft_define_lis(int *dst, int size, int *max)
+static void	ft_define_lis_aux(int *dst, int *arr, int size, int *max)
 {
-	int	*arr;
 	int	i;
 	int	j;
 
 	i = 0;
 	j = -1;
-	arr = (int *) malloc (sizeof(int) * size);
-	if (!arr)
-		ft_display_error();
 	while (i < size)
 		arr[i++] = 1;
 	while (++j < size)
@@ -92,5 +88,17 @@ int	*ft_define_lis(int *dst, int size, int *max)
 			}
 		}
 	}
-	return (ft_lis_util(dst, arr, *max + 1, size));
+}
+
+int	*ft_define_lis(int *dst, int size, int *max)
+{
+	int	*arr;
+	int	*result;
+
+	arr = (int *) malloc (sizeof(int) * size);
+	if (!arr)
+		ft_display_error();
+	ft_define_lis_aux(dst, arr, size, max);
+	result = ft_lis_util(dst, arr, *max + 1, size);
+	return (result);
 }

@@ -112,7 +112,8 @@ void	ft_check_argv_c(int argc, char **argv, t_list **stack_a)
 }
 
 //Main function of the checker program
-//It checks the arguments, executes the movements and checks if the stack is sorted
+//It checks the arguments.
+//it executes the movements and checks if the stack is sorted
 
 int	main(int argc, char *argv[])
 {

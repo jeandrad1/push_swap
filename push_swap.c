@@ -58,7 +58,10 @@ void	ft_check_argv(int argc, char **argv, t_list **stack_a)
 	if (argc == 2)
 	{
 		if (ft_str_format_check(argv[1]) == 1)
-			return ;
+		{
+			ft_lst_delete(stack_a);
+			ft_display_error();
+		}
 		arg = ft_split(argv[1], ' ');
 		while (arg[size] != NULL)
 			size++;

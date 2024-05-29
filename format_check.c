@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	ft_str_format_check(const char *str)
+int	ft_str_format_check(char *str)
 {
 	int	n;
 	int	i;
@@ -22,7 +22,7 @@ int	ft_str_format_check(const char *str)
 	while (str[i])
 	{
 		if ((!ft_isdigit(str[i]) && str[i] != 32) || ft_isalpha(str[i]))
-			ft_display_error();
+			return (1);
 		if (ft_isdigit(str[i]))
 			n++;
 		i++;
@@ -30,7 +30,10 @@ int	ft_str_format_check(const char *str)
 	if (n >= 1)
 		return (0);
 	else
+	{
+		free(str);
 		ft_display_error();
+	}
 	return (1);
 }
 
