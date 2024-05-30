@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 10:23:47 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/05/30 18:42:28 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/30 19:03:34 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,14 @@ void	ft_lst_delete(t_list **stack)
 
 void	ft_lstcheck(t_list *stack_a, int check)
 {
+	t_list	*tmp;
+
+	tmp = stack_a;
 	while (stack_a->next != NULL)
 	{
 		if (stack_a->content == check)
 		{
+			stack_a = tmp;
 			ft_lst_delete(&stack_a);
 			ft_display_error();
 		}
