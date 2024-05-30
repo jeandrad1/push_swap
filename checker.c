@@ -126,7 +126,10 @@ int	main(int argc, char *argv[])
 	if (argc < 2)
 		return (0);
 	else
+	{
+		val_args(argc, argv);
 		ft_check_argv_c(argc, argv, &stack_a);
+	}
 	str = ft_get_next_line_gnl(0);
 	ft_exec_sort(&stack_a, &stack_b, str);
 	if (ft_lstsize(stack_b) != 0)
