@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:37:22 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/05/30 19:48:40 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/30 19:49:28 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ static void	ft_lstcheck_c(t_list *stack_a, int check, char **argv)
 			stack_a = tmp;
 			ft_lst_delete(&stack_a);
 			ft_free_arg(argv);
-			write(1, "kkkkk\n", 6);
 			ft_display_error();
 		}
 		stack_a = stack_a->next;
