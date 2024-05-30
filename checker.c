@@ -24,7 +24,12 @@ void	ft_rrr_or_death(t_list **stack_a, t_list **stack_b, char *str)
 	else if (ft_strcmp(str, "rrr\n"))
 		ft_rrr_check(stack_a, stack_b);
 	else
+	{
+		free(str);
+		ft_lst_delete(stack_a);
+		ft_lst_delete(stack_b);
 		ft_display_error();
+	}
 }
 
 //This function executes the movements of the checker program
