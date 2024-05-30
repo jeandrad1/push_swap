@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:37:22 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/05/30 19:08:53 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/30 19:48:40 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //It checks if the list is empty or if the list has only one element.
 
-static void	ft_lstcheck_c(t_list *stack_a, int check)
+static void	ft_lstcheck_c(t_list *stack_a, int check, char **argv)
 {
 	t_list	*tmp;
 
@@ -25,6 +25,8 @@ static void	ft_lstcheck_c(t_list *stack_a, int check)
 		{
 			stack_a = tmp;
 			ft_lst_delete(&stack_a);
+			ft_free_arg(argv);
+			write(1, "kkkkk\n", 6);
 			ft_display_error();
 		}
 		stack_a = stack_a->next;
@@ -43,7 +45,7 @@ void	ft_check_write_lst(t_list **stack_a, int argc, char **argv, int i)
 	{
 		tmp = ft_lstnew(ft_atoi_mod(argv[i]));
 		ft_lstadd_back(stack_a, tmp);
-		ft_lstcheck_c(*stack_a, tmp->content);
+		ft_lstcheck_c(*stack_a, tmp->content, argv);
 		i++;
 	}
 	tmp = NULL;

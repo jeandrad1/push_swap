@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:36:04 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/05/30 19:08:01 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/30 19:38:45 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,10 @@ void	ft_check_argv_c(int argc, char **argv, t_list **stack_a)
 	if (argc == 2)
 	{
 		if (ft_str_format_check(argv[1]) == 1)
-			return ;
+		{
+			ft_lst_delete(stack_a);
+			ft_display_error();
+		}
 		arg = ft_split(argv[1], ' ');
 		while (arg[size] != NULL)
 			size++;
