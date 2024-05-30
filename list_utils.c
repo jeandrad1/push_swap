@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 10:23:47 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/05/30 19:03:34 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/30 19:55:57 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	ft_lst_order(t_list **stack_a)
 		tmp = tmp->next;
 		tmp2 = tmp2->next;
 	}
+	ft_lst_delete(stack_a);
 	exit(0);
 }
 
