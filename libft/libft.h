@@ -63,5 +63,6 @@ int					ft_strlen_gnl(char *s);
 char				*ft_strjoin_gnl(char *s, char c);
 char				*ft_read_line_gnl(int fd, char *dst);
 char				*ft_get_next_line_gnl(int fd);
+int					ft_isspace(int c);
 
 #endif
