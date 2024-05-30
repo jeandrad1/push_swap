@@ -37,11 +37,12 @@ all:		$(NAME) bonus
 clean:
 			@make -s clean -C libft
 			@${RM} $(OBJ) ${BONUS_OBJ}
+			@echo "CLEANING SUCCESS"
 
 fclean: 	clean
 			@make -s fclean -C libft
 			@${RM} $(NAME) ${BONUS_NAME} ${OBJ} ${BONUS_OBJ}
-			@echo "CLEANING SUCCESS"
+			@echo "FCLEANING SUCCESS"
 
 re:			fclean bonus
 
