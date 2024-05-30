@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jeandrad <jeandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:36:04 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/05/18 18:40:34 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:43:32 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,10 +139,9 @@ int	main(int argc, char *argv[])
 	ft_exec_sort(&stack_a, &stack_b, str);
 	if (ft_lstsize(stack_b) != 0)
 	{
-		write(1, "KO\n", 3);
 		ft_lst_delete(&stack_a);
 		ft_lst_delete(&stack_b);
-		exit (1);
+		ft_display_error();
 	}
 	ft_check_sort(stack_a, stack_b);
 	ft_lst_delete(&stack_a);
