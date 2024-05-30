@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   format_check.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jeandrad <jeandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 15:25:39 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/05/16 17:27:31 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/30 19:30:42 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ int	ft_str_format_check(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if ((!ft_isdigit(str[i]) && str[i] != 32) || ft_isalpha(str[i]))
+		if ((!ft_isdigit(str[i]) && str[i] != 32
+				&& !(str[i] == '-') && !(str[i] == '+'))
+			|| ft_isalpha(str[i]))
 			return (1);
 		if (ft_isdigit(str[i]))
 			n++;
