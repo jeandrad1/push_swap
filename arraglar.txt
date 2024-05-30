@@ -1,6 +1,5 @@
 push_swap:
-	1 leak.
-	arreglar lis algo para norma 
+	Todo parece que funciona. testeo profundo y comentar
 
 checker:
-	OK
+	Todo parece que funciona. testeo profundo y comentar
