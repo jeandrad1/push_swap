@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jeandrad <jeandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 10:23:47 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/03/30 10:39:44 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/30 18:42:28 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ void	ft_lstcheck(t_list *stack_a, int check)
 	while (stack_a->next != NULL)
 	{
 		if (stack_a->content == check)
+		{
+			ft_lst_delete(&stack_a);
 			ft_display_error();
+		}
 		stack_a = stack_a->next;
 	}
 	return ;
