@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 17:37:36 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/05/30 18:42:49 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:45:16 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ void	val_args(int argc, char **argv)
 				{
 					ft_display_error();
 				}
+				if ((*arg == '-' && !ft_isdigit(*(arg +1)))
+					|| (*arg == '+' && !ft_isdigit(*(arg +1))))
+					ft_display_error();
 				arg++;
 			}
 			i++;

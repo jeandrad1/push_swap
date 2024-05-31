@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 10:23:47 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/05/30 19:55:57 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/31 19:22:36 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,11 +96,14 @@ void	ft_lst_inverted(t_list **stack_a)
 void	ft_write_lst(t_list **stack_a, int argc, char **argv, int i)
 {
 	t_list	*tmp;
+	int		num;
 
 	tmp = NULL;
+	num = 0;
 	while (i < argc)
 	{
-		tmp = ft_lstnew(ft_atoi_mod(argv[i]));
+		num = ft_atoi_mod(argv[i], stack_a, argv);
+		tmp = ft_lstnew(num);
 		ft_lstadd_back(stack_a, tmp);
 		ft_lstcheck(*stack_a, tmp->content);
 		i++;

@@ -6,7 +6,7 @@
 /*   By: jeandrad <jeandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 15:25:39 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/05/30 19:42:26 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/31 19:24:42 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,14 @@ int	ft_str_format_check(char *str)
 				&& !(str[i] == '-') && !(str[i] == '+'))
 			|| ft_isalpha(str[i]))
 			return (1);
-		if (ft_isdigit(str[i]))
+		if (ft_isdigit(str[i]) && ft_isspace(str[i + 1]) && str[i + 2] != '\0')
 			n++;
 		i++;
 	}
 	if (n >= 1)
 		return (0);
 	else
-	{
-		free(str);
-		ft_display_error();
-	}
-	return (1);
+		return (2);
 }
 
 //It checks the sign of the number and moves the pointer.
@@ -60,7 +56,7 @@ int	ft_check_sign_and_move_pointer(const char *str, int *i)
 
 //Modified atoi function to check if the number is valid.
 
-int	ft_atoi_mod(const char *str)
+int	ft_atoi_mod(char *str, t_list **stack_a, char **argv)
 {
 	int		i;
 	int		sign;
@@ -80,8 +76,13 @@ int	ft_atoi_mod(const char *str)
 		ft_display_error();
 	n *= sign;
 	if (n > 2147483647 || n < -2147483648)
+	{
+		ft_free_arg(argv);
+	 	ft_lst_delete(stack_a);
+		write(1, "KKKKK\n", 6);
 		ft_display_error();
-	return ((int) n);
+	}
+	return (n);
 }
 
 //It checks the input to make movements.
