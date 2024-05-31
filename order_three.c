@@ -3,18 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   order_three.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jeandrad <jeandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 10:25:00 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/03/27 10:25:07 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:12:04 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// This function returns the position of the maximum or minimum number in the array 'max_n_min'.
-// If 'cont' is greater than the maximum number in 'max_n_min', it returns the position of the maximum number.
-// If 'cont' is less than the minimum number in 'max_n_min', it returns the position of the minimum number.
+// This function returns the position of the
+// maximum or minimum number in the array 'max_n_min'.
+// If 'cont' is greater than the maximum number
+// in 'max_n_min', it returns the position of the maximum number.
+// If 'cont' is less than the minimum number in 
+//'max_n_min', it returns the position of the minimum number.
 // If 'cont' is neither the maximum nor the minimum, it returns 'size + 1'.
 
 int	return_max_or_min(int cont, int *max_n_min, int size)
@@ -26,10 +29,13 @@ int	return_max_or_min(int cont, int *max_n_min, int size)
 	return (size + 1);
 }
 
-// This function finds the maximum and minimum numbers in the list 'stack_a' and their positions.
-// It stores the maximum and minimum numbers in 'max_n_min[0]' and 'max_n_min[1]', respectively,
+// This function finds the maximum and
+// minimum numbers in the list 'stack_a' and their positions.
+// It stores the maximum and minimum numbers
+// in 'max_n_min[0]' and 'max_n_min[1]', respectively,
 // and their positions in 'max_n_min[2]' and 'max_n_min[3]', respectively.
-// It then calls 'return_max_or_min' to return the position of the maximum or minimum number.
+// It then calls 'return_max_or_min'
+// to return the position of the maximum or minimum number.
 
 int	ft_max_or_min(t_list *stack_a, int cont, int size)
 {
@@ -100,10 +106,13 @@ int	ft_max_nbr(int a, int b)
 		return (a);
 }
 
-// This function finds the position of the smallest number in 'stack_a' and performs the necessary moves to bring it to the top.
+// This function finds the position of the smallest number in
+// 'stack_a' and performs the necessary moves to bring it to the top.
 // It first calls 'ft_min' to find the position of the smallest number.
-// If the position is less than or equal to 'size / 2', it performs 'pos' number of rotations.
-// If the position is greater than 'size / 2', it performs 'size - pos' number of reverse rotations.
+// If the position is less than or equal to 'size / 2',
+// it performs 'pos' number of rotations.
+// If the position is greater than 'size / 2',
+// it performs 'size - pos' number of reverse rotations.
 
 void	ft_search_min(t_list **stack_a, int size)
 {

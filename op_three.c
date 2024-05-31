@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op_three.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jeandrad <jeandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 10:24:15 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/03/27 11:41:21 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:08:33 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ void	ft_rrb(t_list **stack_b)
 	write(1, "rrb\n", 4);
 }
 
-// This function reverse rotates the list (stack_a) and (stack_b) by one element.
+// This function reverse rotates the list (stack_a)
+// and (stack_b) by one element.
 
 void	ft_rrr(t_list **stack_a, t_list **stack_b)
 {

@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   sorter.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jeandrad <jeandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 10:25:43 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/03/27 10:25:47 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:10:17 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// This function finds the best combination of moves to sort the list of 3 elements.
+// This function finds the best combination
+// of moves to sort the list of 3 elements.
 
 void	ft_sort_three(t_list **stack_a)
 {
@@ -43,7 +44,8 @@ void	ft_sort_three(t_list **stack_a)
 	}
 }
 
-// This function finds the best combination of moves to sort the list of 5 elements.
+// This function finds the best combination of moves
+// to sort the list of 5 elements.
 
 void	ft_sort_five(t_list **stack_a, t_list **stack_b)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   op_one.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jeandrad <jeandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 10:23:57 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/03/27 11:41:16 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/05/31 16:10:39 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void	ft_sb(t_list **stack_b)
 	return ;
 }
 
-// This function swaps the first two elements of the list (stack_a) and (stack_b).
+// This function swaps the first two elements of the
+// list (stack_a) and (stack_b).
 
 void	ft_ss(t_list **stack_a, t_list **stack_b)
 {
@@ -67,7 +68,8 @@ void	ft_ss(t_list **stack_a, t_list **stack_b)
 	return ;
 }
 
-// This function moves the first element of the list (stack_a) to the top of the list (stack_a).
+// This function moves the first element of the
+// list (stack_a) to the top of the list (stack_a).
 
 void	ft_pa(t_list **stack_b, t_list **stack_a)
 {
@@ -83,7 +85,8 @@ void	ft_pa(t_list **stack_b, t_list **stack_a)
 	return ;
 }
 
-// This function moves the first element of the list (stack_b) to the top of the list (stack_b).
+// This function moves the first element of the
+// list (stack_b) to the top of the list (stack_b).
 
 void	ft_pb(t_list **stack_a, t_list **stack_b)
 {
