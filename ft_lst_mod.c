@@ -12,6 +12,12 @@
 
 #include "push_swap.h"
 
+//It creates a new node
+//It allocates memory for the new node
+//It initializes the content of the new node with the parameter content
+//It initializes the next of the new node with NULL
+//It returns the new node
+
 t_list	*ft_lstnew(int content)
 {
 	t_list	*new_node;
@@ -23,6 +29,9 @@ t_list	*ft_lstnew(int content)
 	new_node->next = NULL;
 	return (new_node);
 }
+
+//It returns the number of elements in the list
+//It returns 0 if the list is empty
 
 int	ft_lstsize(t_list *lst)
 {
@@ -37,6 +46,8 @@ int	ft_lstsize(t_list *lst)
 	return (i);
 }
 
+//It returns the last element of the list
+
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
@@ -45,6 +56,8 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst->next;
 	return (lst);
 }
+
+//It adds the element new at the end of the list
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {

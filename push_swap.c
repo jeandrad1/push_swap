@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+//It splits the list into two parts and sorts them.
+
 void	ft_lst_split(t_list **stack_a, t_list **stack_b, int size)
 {
 	int	*dst;
@@ -38,6 +40,8 @@ void	ft_lst_split(t_list **stack_a, t_list **stack_b, int size)
 	free (arr);
 }
 
+//It checks the format of the arguments.
+
 int	ft_check_format(int argc, char **argv)
 {
 	int	control;
@@ -47,6 +51,8 @@ int	ft_check_format(int argc, char **argv)
 		control = ft_str_format_check(argv[1]);
 	return (control);
 }
+
+//It checks the arguments and writes them to the list.
 
 void	ft_check_argv(int argc, char **argv, t_list **stack_a)
 {
@@ -71,6 +77,8 @@ void	ft_check_argv(int argc, char **argv, t_list **stack_a)
 	else if (argc >= 3)
 		ft_write_lst(stack_a, argc, argv, 1);
 }
+
+//Main call to the program.
 
 int	main(int argc, char **argv)
 {

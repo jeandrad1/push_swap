@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+// This function parses and checks if the arguments are valid.
+
 void	val_args(int argc, char **argv)
 {
 	int		i;

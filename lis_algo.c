@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+//It initializes the array with 0 and the last element with INT_MAX
+
 int	*ft_lis_util_helper(int max)
 {
 	int	*val;
@@ -23,6 +25,9 @@ int	*ft_lis_util_helper(int max)
 	val[max] = 2147483647;
 	return (val);
 }
+
+//It processes the inner loop of the lis algorithm util function
+//It returns the index of the element that is going to be added to the array
 
 static int	process_inner_loop(int **dst_arr, int *val, int max_j[2])
 {
@@ -45,6 +50,9 @@ static int	process_inner_loop(int **dst_arr, int *val, int max_j[2])
 	return (max_j[1]);
 }
 
+//It uses the lis algorithm to find the longest increasing subsequence
+//It returns the longest increasing subsequence
+
 int	*ft_lis_util(int *dst, int *arr, int max, int size)
 {
 	int	*val;
@@ -65,6 +73,8 @@ int	*ft_lis_util(int *dst, int *arr, int max, int size)
 	free(arr);
 	return (val);
 }
+
+//It defines the auxiliar array and the maximum value of the array
 
 static void	ft_define_lis_aux(int *dst, int *arr, int size, int *max)
 {
@@ -89,6 +99,8 @@ static void	ft_define_lis_aux(int *dst, int *arr, int size, int *max)
 		}
 	}
 }
+
+//It uses the functions above to define the longest increasing subsequence
 
 int	*ft_define_lis(int *dst, int size, int *max)
 {

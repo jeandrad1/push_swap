@@ -12,6 +12,9 @@
 
 #include "push_swap.h"
 
+//It displays an error message and exits the program
+//The error message is displayed in the standard error output
+
 void	ft_display_error(void)
 {
 	ft_putstr_fd("Error\n", 2);

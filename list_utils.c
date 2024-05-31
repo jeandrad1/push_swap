@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+//It deletes the list
+
 void	ft_lst_delete(t_list **stack)
 {
 	t_list	*tmp;
@@ -26,6 +28,9 @@ void	ft_lst_delete(t_list **stack)
 		*stack = tmp;
 	}
 }
+
+// This function checks if a given value (check) exists in the list (stack_a).
+// If the value is found, it deletes the list and displays an error.
 
 void	ft_lstcheck(t_list *stack_a, int check)
 {
@@ -45,6 +50,9 @@ void	ft_lstcheck(t_list *stack_a, int check)
 	return ;
 }
 
+// This function checks if the list (stack_a) is ordered in ascending order.
+// If the list is ordered, it deletes the list and exits the program.
+
 void	ft_lst_order(t_list **stack_a)
 {
 	t_list	*tmp;
@@ -63,6 +71,8 @@ void	ft_lst_order(t_list **stack_a)
 	exit(0);
 }
 
+// This function checks if the list (stack_a) is ordered in descending order.
+
 void	ft_lst_inverted(t_list **stack_a)
 {
 	t_list	*tmp;
@@ -80,6 +90,8 @@ void	ft_lst_inverted(t_list **stack_a)
 	ft_sa(stack_a);
 	return ;
 }
+
+// This function writes the list (stack_a) with the values of the arguments.
 
 void	ft_write_lst(t_list **stack_a, int argc, char **argv, int i)
 {

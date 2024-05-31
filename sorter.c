@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+// This function finds the best combination of moves to sort the list of 3 elements.
+
 void	ft_sort_three(t_list **stack_a)
 {
 	int		i;
@@ -41,6 +43,8 @@ void	ft_sort_three(t_list **stack_a)
 	}
 }
 
+// This function finds the best combination of moves to sort the list of 5 elements.
+
 void	ft_sort_five(t_list **stack_a, t_list **stack_b)
 {
 	int	i;
@@ -52,6 +56,8 @@ void	ft_sort_five(t_list **stack_a, t_list **stack_b)
 	ft_move_to_a(stack_a, stack_b);
 	ft_search_min(stack_a, ft_lstsize(*stack_a));
 }
+
+//It moves the elements from stack_b to stack_a the best way possible
 
 void	ft_move_to_a(t_list **stack_a, t_list **stack_b)
 {
@@ -76,6 +82,8 @@ void	ft_move_to_a(t_list **stack_a, t_list **stack_b)
 		size_b--;
 	}
 }
+
+//It moves the elements from stack_a to stack_b the best way possible
 
 void	ft_move_to_b(t_list **stack_a, t_list **stack_b, int *arr, int max)
 {

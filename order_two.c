@@ -12,6 +12,10 @@
 
 #include "push_swap.h"
 
+// This function adjusts the values of 'min' and 'max' based on the size of the list.
+// If 'min' or 'max' is greater than half the size of the list, it subtracts the size of the list from 'min' or 'max'.
+// This is done to handle the case where the list is circular and the minimum or maximum value is closer to the end of the list than the beginning.
+
 int	ft_the_needed(int min, int max, int size)
 {
 	int	i;
@@ -24,12 +28,20 @@ int	ft_the_needed(int min, int max, int size)
 	return (i);
 }
 
+// This function adjusts the value of 'max' based on the size of the list.
+// If 'max' is greater than half the size of the list, it subtracts the size of the list from 'max'.
+// This is done to handle the case where the list is circular and the maximum value is closer to the end of the list than the beginning.
+
 int	ft_the_needed_b(int max, int size)
 {
 	if (max > (size / 2))
 		max = max - size;
 	return (max);
 }
+
+// This function finds the position of 'cont' in 'stack_a' and adjusts it based on the size of the list.
+// If the position is greater than half the size of the list, it subtracts the size of the list from the position.
+// This is done to handle the case where the list is circular and 'cont' is closer to the end of the list than the beginning.
 
 int	ft_the_needed_a(t_list *stack_a, int cont, int size)
 {
@@ -53,6 +65,12 @@ int	ft_the_needed_a(t_list *stack_a, int cont, int size)
 	return (ft_the_needed_b(i, size));
 }
 
+// This function copies the content of the linked list 'stack_a' into a new dynamically allocated array 'arr'.
+// It first allocates memory for 'arr' with a size of 'size + 1'.
+// If the allocation fails, it calls 'ft_display_error' to handle the error.
+// It then traverses 'stack_a', copying each 'content' into 'arr'.
+// It returns the pointer to the new array 'arr'.
+
 int	*ft_copy_cont(t_list *stack_a, int size)
 {
 	int	*arr;
@@ -69,6 +87,11 @@ int	*ft_copy_cont(t_list *stack_a, int size)
 	}
 	return (arr);
 }
+
+// This function copies the contents of the array 'arr' into a new array 'cpy'.
+// It first allocates memory for 'cpy' with the same size as 'arr'.
+// If the allocation fails or if 'arr' is NULL, it calls 'ft_display_error' to handle the error.
+// It then copies each element of 'arr' into 'cpy'.
 
 int	*ft_intcpy(int	*arr, int size)
 {

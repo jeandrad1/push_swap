@@ -12,6 +12,9 @@
 
 #include "push_swap.h"
 
+// This function checks the position of a number in an array that matches the content of the list.
+// If it doesn't find a match, it returns -1.
+
 int	ft_best_nbr_a(t_list *stack_a, int size, int *arr, int max)
 {
 	int	pos;
@@ -35,6 +38,9 @@ int	ft_best_nbr_a(t_list *stack_a, int size, int *arr, int max)
 	return (size);
 }
 
+// This function finds the position of the smallest number in the array 'tmp'
+// and then frees the memory allocated for the arrays 'arr_a', 'arr_b', and 'tmp'.
+
 int	ft_best_comb_helper(int *arr_a, int *arr_b, int *tmp, int size)
 {
 	int	i;
@@ -52,6 +58,11 @@ int	ft_best_comb_helper(int *arr_a, int *arr_b, int *tmp, int size)
 	free(tmp);
 	return (pos);
 }
+
+// This function calculates the best combination of moves to sort the stacks.
+// It creates a new array 'tmp' and fills it with the maximum value of 'arr_a' and 'arr_b' if they have the same sign,
+// or the sum of their absolute values if they have different signs.
+// It then calls 'ft_best_comb_helper' to find the position of the smallest number in 'tmp'.
 
 int	ft_best_comb(int *arr_a, int *arr_b, int size)
 {
@@ -79,6 +90,9 @@ int	ft_best_comb(int *arr_a, int *arr_b, int size)
 	return (ft_best_comb_helper(arr_a, arr_b, tmp, size));
 }
 
+// This function moves the elements of 'stack_a' and 'stack_b' to sort them.
+// It performs a series of rotations and reverse rotations based on the values of 'a' and 'b'.
+
 int	ft_move_a(int a, int b, t_list **stack_a, t_list **stack_b)
 {
 	while (a < 0 && b < 0)
@@ -101,6 +115,10 @@ int	ft_move_a(int a, int b, t_list **stack_a, t_list **stack_b)
 			ft_ra(stack_a);
 	return (b);
 }
+
+// This function calculates the best number of moves to sort 'stack_b'.
+// It creates two arrays 'arr_a' and 'arr_b' and fills them with the number of moves needed to sort 'stack_a' and 'stack_b', respectively.
+// It then calls 'ft_best_comb' to find the best combination of moves and performs the moves on 'stack_a' and 'stack_b'.
 
 int	ft_best_nbr_b(t_list **stack_b, int size_b, t_list **stack_a, int size_a)
 {

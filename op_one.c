@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+// This function swaps the first two elements of the list (stack_a).
+
 void	ft_sa(t_list **stack_a)
 {
 	t_list	*tmp;
@@ -26,6 +28,8 @@ void	ft_sa(t_list **stack_a)
 	return ;
 }
 
+// This function swaps the first two elements of the list (stack_b).
+
 void	ft_sb(t_list **stack_b)
 {
 	t_list	*tmp;
@@ -39,6 +43,8 @@ void	ft_sb(t_list **stack_b)
 	write(1, "sb\n", 3);
 	return ;
 }
+
+// This function swaps the first two elements of the list (stack_a) and (stack_b).
 
 void	ft_ss(t_list **stack_a, t_list **stack_b)
 {
@@ -61,6 +67,8 @@ void	ft_ss(t_list **stack_a, t_list **stack_b)
 	return ;
 }
 
+// This function moves the first element of the list (stack_a) to the top of the list (stack_a).
+
 void	ft_pa(t_list **stack_b, t_list **stack_a)
 {
 	t_list	*tmp;
@@ -74,6 +82,8 @@ void	ft_pa(t_list **stack_b, t_list **stack_a)
 	write(1, "pa\n", 3);
 	return ;
 }
+
+// This function moves the first element of the list (stack_b) to the top of the list (stack_b).
 
 void	ft_pb(t_list **stack_a, t_list **stack_b)
 {

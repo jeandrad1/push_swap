@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+// This function reverse rotates the list (stack_a) by one element.
+
 void	ft_rra(t_list **stack_a)
 {
 	t_list	*last;
@@ -30,6 +32,8 @@ void	ft_rra(t_list **stack_a)
 	write(1, "rra\n", 4);
 }
 
+// This function reverse rotates the list (stack_b) by one element.
+
 void	ft_rrb(t_list **stack_b)
 {
 	t_list	*last;
@@ -47,6 +51,8 @@ void	ft_rrb(t_list **stack_b)
 	tmp->next = NULL;
 	write(1, "rrb\n", 4);
 }
+
+// This function reverse rotates the list (stack_a) and (stack_b) by one element.
 
 void	ft_rrr(t_list **stack_a, t_list **stack_b)
 {

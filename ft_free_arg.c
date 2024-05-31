@@ -12,6 +12,9 @@
 
 #include "push_swap.h"
 
+//It frees the argument
+//It frees each char of the argument and the argument itself
+
 void	ft_free_arg(char **arg)
 {
 	int	i;

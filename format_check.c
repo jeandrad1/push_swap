@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+//It checks if the string has a valid format.
+
 int	ft_str_format_check(char *str)
 {
 	int	n;
@@ -39,6 +41,9 @@ int	ft_str_format_check(char *str)
 	return (1);
 }
 
+//It checks the sign of the number and moves the pointer.
+//It's used below
+
 int	ft_check_sign_and_move_pointer(const char *str, int *i)
 {
 	int	sign;
@@ -52,6 +57,8 @@ int	ft_check_sign_and_move_pointer(const char *str, int *i)
 	}
 	return (sign);
 }
+
+//Modified atoi function to check if the number is valid.
 
 int	ft_atoi_mod(const char *str)
 {
@@ -76,6 +83,9 @@ int	ft_atoi_mod(const char *str)
 		ft_display_error();
 	return ((int) n);
 }
+
+//It checks the input to make movements.
+//For the checker program.
 
 int	ft_strcmp(char *s1, char *s2)
 {
