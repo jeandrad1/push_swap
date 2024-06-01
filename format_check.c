@@ -24,8 +24,7 @@ int	ft_str_format_check(char *str)
 	while (str[i])
 	{
 		if ((!ft_isdigit(str[i]) && str[i] != 32
-				&& !(str[i] == '-') && !(str[i] == '+'))
-			|| ft_isalpha(str[i]))
+				&& !(str[i] == '-') && !(str[i] == '+')))
 			return (1);
 		if (ft_isdigit(str[i]) && ft_isspace(str[i + 1]) && str[i + 2] != '\0')
 			n++;
@@ -67,7 +66,7 @@ int	ft_atoi_mod(char *str, t_list **stack_a, char **argv)
 	sign = ft_check_sign_and_move_pointer(str, &i);
 	while (str[i] >= 48 && str[i] <= 57)
 	{
-		if (!(ft_isdigit(str[i]) && str[i] != 32) || ft_isalpha(str[i]))
+		if (!(ft_isdigit(str[i]) && str[i] != 32))
 			ft_display_error();
 		n = n * 10 + (str[i] - 48);
 		i++;
