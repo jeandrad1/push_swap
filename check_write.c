@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_write.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeandrad <jeandrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeandrad <jeandrad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 16:37:22 by jeandrad          #+#    #+#             */
-/*   Updated: 2024/05/31 18:18:49 by jeandrad         ###   ########.fr       */
+/*   Updated: 2024/09/14 15:24:37 by jeandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_check_write_lst(t_list **stack_a, int argc, char **argv, int i)
 	tmp = NULL;
 	while (i < argc)
 	{
-		num = ft_atoi_mod(argv[i], stack_a);
+		num = ft_atoi_mod(argv[i], stack_a, argv);
 		tmp = ft_lstnew(num);
 		ft_lstadd_back(stack_a, tmp);
 		ft_lstcheck_c(*stack_a, tmp->content);
